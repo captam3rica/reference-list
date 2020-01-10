@@ -66,6 +66,7 @@
 - [EraseInstall](https://bitbucket.org/prowarehouse-nl/erase-install/src/master/)
 - [InstallApplications](https://github.com/erikng/installapplications):
     dynamically download packages for use with `InstallApplication` 
+- [Recipe Robot](https://github.com/homebysix/recipe-robot)
     
 
 ### Handy Sites
@@ -77,6 +78,37 @@
 
 <a name="macos_terminal_commands"></a>    
 ### Handy Commands
+
+- Query LDAP
+
+	- Example directory domain
+
+		`dirservices.example.com`
+		
+	- Example query
+
+		Return container where the user exists
+
+		`ldapsearch -h dirservices.example.com -x -b "dc=dirservices,dc=example,dc=com" "uid=user_name_searched_for"`
+		
+		Only look in the 'users' CN
+		
+		`ldapsearch -h dirservices.example.com -x -b "cn=users,dc=dirservices,dc=example,dc=com" "uid=user_name_searched_for"`
+		
+		Return all users in the "Everyone" group
+		
+		`ldapsearch -h dirservices.example.com -x -b "cn=Everyone,dc=dirservices,dc=example,dc=com"`
+		
+	- Flags
+
+		**-h**: hostname for the directory services server.  
+		**-b**: search base (base DN).  
+		**-p**: define a none standard port if one is being used.  
+		**-x**: sorts the results on the server before sending them to the client.  
+		**-z**: Limit the number of results returned.  
+		**-l**: Specify amount of time to allow the query to run.
+		**-W**: prompt for password
+		
 
 - Grab macOS installers
 
@@ -147,14 +179,17 @@
 	- [Apple Developer - APFS](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40016999-CH1-DontLinkElementID_19)
 	- [Apple Developer - APNS - API](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CommunicatingwithAPNs.html#//apple_ref/doc/uid/TP40008194-CH11-SW1)
 	- [Apple Developer - APNS - Overview](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1)
+- [GameplayKit](https://developer.apple.com/documentation/gameplaykit)
+- [Kerberos Extension](https://developer.apple.com/documentation/devicemanagement/extensiblesinglesignonkerberos/extensiondata)
+- [System Extensions](https://developer.apple.com/system-extensions/)
 
 
 #### Other
 
 - [Apple Document Style Guide](https://help.apple.com/applestyleguide/#/apsg3acde405)
 - [Apple Open Source Documentation](https://opensource.apple.com/)
+- [Installing Beta Software](https://developer.apple.com/support/install-beta/)
 - [keyboard shortcuts](http://support.apple.com/kb/HT1343 )
-
 - Launchd Documentation
 	- `man launchd.plist` - to see a full list of keys available to daemons/agents.
 	- ~/Library/LaunchAgents         Per-user agents provided by the user.
@@ -162,8 +197,6 @@
 	- /Library/LaunchDaemons         System-wide daemons provided by the administrator.
 	- /System/Library/LaunchAgents   Per-user agents provided by OS X.
 	- /System/Library/LaunchDaemons  System-wide daemons provided by OS X.
-
-
 - [Apple software Restore (ASR)](https://en.wikipedia.org/wiki/Apple_Software_Restore)
 - [Disabled Accounts](https://www.jamf.com/jamf-nation/discussions/18243/password-policy-profile-disables-user-account)
 - [Setting Printer Options Via CLI](http://www.brunerd.com/blog/2012/03/13/getting-and-setting-ppd-options-via-command-line-for-use-with-lpadmin-in-os-x/)
@@ -471,6 +504,7 @@ https://jamf.it/dep-debug
 - [AzureAD LDAPS](https://www.jamf.com/jamf-nation/discussions/25876/a-guide-to-jss-azure-ad-integration-ldap-+-sso)
 - [AzureAD Integration](https://marketplace.jamf.com/details/azure-active-directory/)
 - [Okta LDAP Integration](https://travellingtechguy.eu/integrating-okta-ldap-in-jamf-pro/)
+- [Jamf ADCS Connector](https://docs.jamf.com/ad-cs-connector/1.0.0/Jamf_AD_CS_Connector_Overview.html)
 
 
 *Single-Sign-On*
@@ -482,6 +516,7 @@ https://jamf.it/dep-debug
 	- [OneLogin](https://www.jamf.com/jamf-nation/articles/438/)
 	- [Ping Identity](https://www.jamf.com/jamf-nation/articles/439/)
 	- [G-Suite](https://www.jamf.com/jamf-nation/articles/440/)
+- [MSFT Azure AD SSO Doc](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/jamfprosamlconnector-tutorial)
 
 
 *Conditional Access*
@@ -506,6 +541,7 @@ https://jamf.it/dep-debug
 - [All Product Documentation](https://www.jamf.com/resources/product-documentation/)
 - [Jamf Pro Security Overview](https://www.jamf.com/resources/product-documentation/jamf-pro-security-overview/)
 - [MacOS Security Checklist](https://resources.jamf.com/documents/products/documentation/macos-security-checklist.pdf)
+- [Startinstall Repo](https://github.com/jamf/erase-install-webinar/wiki)
 
 *Errors*
 
@@ -520,6 +556,9 @@ https://jamf.it/dep-debug
 
 #### Tools
 
+- Jamf Protect
+	- [Product Page](https://www.jamf.com/products/jamf-protect/)
+	- [Admin Guide](https://docs.jamf.com/jamf-protect/administrator-guide/Preface.html)
 - [GitHub](https://github.com/jamf)
 	- [DEPNotify-Starter](https://github.com/jamf/DEPNotify-Starter)
 - [Jamf Connect](https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/)
@@ -550,12 +589,28 @@ https://jamf.it/dep-debug
 - [MacOS](https://my.air-watch.com/help/9.1/en/Content/Platform_Guides/macOS/C/Profiles_Overview.htm?TocPath=PROFILES|macOS%C2%A0Device%20Profiles|_____0)
 - [vSphere SDK - Python](https://github.com/vmware/vsphere-automation-sdk-python/blob/master/README.md)
 - [VMware Code](https://code.vmware.com/home)
+- [Azure AD DS Integration](https://blog.virtualprivateer.com/workspace-one-and-azure-ad-1/)
 
 #### Documentation
 
 - [Workspace ONE UEM Docs](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1907/rn/VMware-Workspace-ONE-UEM-Release-Notes-1907.html)
 - [Device Profiles](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1908/iOS_Platform/GUID-AWT-IOS-PROFILE-OVERVIEW.html)
 	- [Windows](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1908/Windows_Desktop_Device_Management/GUID-AWT-PROFILE-OVERVIEWWD.html)
+
+
+#### Secure Email Gateway
+
+- [Communications Flow, EAS with SEG](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/9.5/vmware-airwatch-guides-95/GUID-AW95-CommunicationFlow.html)
+- KCD
+
+	- [Kerberos Error Code: 0x7 KDC_ERR_S_PRINCIPAL_UNKNOWN](https://social.technet.microsoft.com/wiki/contents/articles/2064.kerberos-error-code-0x7-kdc-err-s-principal-unknown-dsforum2wiki.aspx)
+		- [Service Logons Fail Due to Incorrectly Set SPNs](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10)?redirectedfrom=MSDN)
+	- [4771(F): Kerberos pre-authentication failed.](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4771)
+	- [Troubleshooting Stuff at the bottom](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1810/WS1-Cross-Domain-KCD.pdf)
+	- [Common Kerberos Errors](https://docs.oracle.com/cd/E19253-01/816-4557/trouble-6/index.html)
+	- [Yet another common kerberos errors doc](https://pvtl.force.com/s/article/common-errors-and-resolutions)
+	- [Table of Kerberos v5 Status Codes](https://docs.oracle.com/cd/E19683-01/816-1331/kerberrs-1/index.html)
+	- [Troubleshooting Kerberos](https://docs.oracle.com/cd/E19253-01/816-4557/trouble-5/index.html)
 
 #### Tools
 
@@ -564,14 +619,51 @@ https://jamf.it/dep-debug
 
 
 <a name=“msft_azure”></a>
-### MSFT Azure
+### MSFT Device Manager
 
 - [REST API](https://docs.microsoft.com/en-us/rest/api/azure/)
 
 <a name=“MI”></a>
 ### Mobile Iron
 
-- 
+
+## Certificate Information
+
+- [SSL Checker with SSL Shopper](https://www.sslshopper.com/ssl-checker.html#hostname=https://awseg.foley.com) - Enter a site FQDN to see if it has a proper SSL certificate associated with it.
+
+- [Build a Concatenated PEM File](https://kb.vmware.com/s/article/2046591)
+	- IDM Server PEM Cert
+
+- Concatenate Root and Intermediate certs
+
+	- Open a text editor
+	- Copy the intermediate certs as they should appear in the chain
+		- This can also be done in Terminal via the following command.
+			
+			```bash
+			cat intermediate_cert.cer \
+				intermediate_cert_2_cer \
+				intermediate_cert_n \
+				root_cert.cer > concatenated_cert.pfx
+			```
+
+	- Add the Root cert in last
+	- Name the file with the `.pfx` file extension
+
+- [Convert Certificate Files to One-Line PEM Format](https://docs.vmware.com/en/Unified-Access-Gateway/3.3.1/com.vmware.uag-331-deploy-config.doc/GUID-870AF51F-AB37-4D6C-B9F5-4BFEB18F11E9.html#GUID-870AF51F-AB37-4D6C-B9F5-4BFEB18F11E9)
+	- UAG SAML file signing
+	- IdM Appliance SAML Cert
+	- vRealize
+
+	`cat server_cert.cer key_filename.key cacerts.cer > multi_part.pem`
+	
+- [Convert P7B to PFX with OpenSSL](https://www.lisenet.com/2014/convert-p7b-to-pfx-with-openssl/) - If you need to convert from P7B to PFX make sure that you have both the certificate and the private key handy for this command sequence.
+
+- DigiCert
+
+	- [CSR Creation Instructions for Microsoft Servers](https://www.digicert.com/util/csr-creation-microsoft-servers-using-digicert-utility.htm) - Walks through the CSR request process using the DigiCert tool and walks through the process of exporting a Windows cert and private key from the MSFT Certificate Manager console.
+	- [How to Export/Back Up Your SSL Certificate w/Private Key](https://www.digicert.com/ssl-support/certificate-pfx-file-export-import-iis-10.htm#export-pfx) - Use IIS 10 to export a copy of your SSL certificate from one server and import and configure it on a (different) Windows Server 2016
+
 
 \[[top](#top)]
 <a name="virtualization"></a>
@@ -639,16 +731,7 @@ https://jamf.it/dep-debug
 
 #### Certificate Information
 
-- [Build a Concatenated PEM File](https://kb.vmware.com/s/article/2046591)
-	- IDM Server PEM Cert
-
-- [Convert Certificate Files to One-Line PEM Format](https://docs.vmware.com/en/Unified-Access-Gateway/3.3.1/com.vmware.uag-331-deploy-config.doc/GUID-870AF51F-AB37-4D6C-B9F5-4BFEB18F11E9.html#GUID-870AF51F-AB37-4D6C-B9F5-4BFEB18F11E9)
-	- UAG SAML file signing
-	- IdM Appliance SAML Cert
-	- vRealize
-
-	`cat server_cert.cer key_filename.key cacerts.cer > multi_part.pem`
-
+Moved this information to its own section
 
 
 #### Upgrading
@@ -813,8 +896,8 @@ The command to collect the logs from a remote machine is:
 #### User Account Information
 
 - [Horizon 7 User Accounts - 7-7.10](https://docs.vmware.com/en/VMware-Horizon-7/7.10/horizon-security/GUID-7C94B12F-0158-42EB-A011-00CC4912A435.html?hWord=N4IghgNiBcIBYHsBOBLAXggdgAgOzYFcBnAUyWzAGNKEDMAXIkAXyA)
-- [vCenter Server User for Horizon 7 and View Composer - 7.8](https://docs.vmware.com/en/VMware-Horizon-7/7.8/horizon-installation/GUID-80D653FA-BCC0-45B9-AF84-5E0EEC2AD139.html)
-	- [vCenter Server Role Permissions - 7-7.8](https://docs.vmware.com/en/VMware-Horizon-7/7.8/horizon-installation/GUID-A878F876-B359-42FC-9124-A1E34BFB3319.html#GUID-A878F876-B359-42FC-9124-A1E34BFB3319)
+- [vCenter Server User for Horizon 7 and View Composer - 7.11](https://docs.vmware.com/en/VMware-Horizon-7/7.11/horizon-installation/GUID-80D653FA-BCC0-45B9-AF84-5E0EEC2AD139.html)
+	- [vCenter Server Role Permissions - 7-7.11](https://docs.vmware.com/en/VMware-Horizon-7/7.11/horizon-installation/GUID-A878F876-B359-42FC-9124-A1E34BFB3319.html)
 - [View Composer and Instant Clone Privileges Required for the vCenter Server User - 7-7.10](https://docs.vmware.com/en/VMware-Horizon-7/7.10/horizon-installation/GUID-467F552F-3034-4917-A985-B5E5FEC5C68F.html)
 - [Instant Clone Operations User Account - 7-7.8](https://docs.vmware.com/en/VMware-Horizon-7/7.8/horizon-installation/GUID-E91881F4-F8C0-48A5-A1A4-61577E287E29.html)
 
@@ -844,6 +927,7 @@ The command to collect the logs from a remote machine is:
 - [Google Support](https://support.google.com/)
 - [Site Help pages](https://support.google.com/sites/answer/98081)
 - [G Suite Help | Build your support team](https://gsuite.google.com/setup/resources/support-users/)
+- [Connect to LDAP](https://support.google.com/a/answer/9089736?hl=en)
 
 
 ### Commands 
@@ -863,8 +947,9 @@ The command to collect the logs from a remote machine is:
 <a name="scripting-and-languages"></a>
 ## Related to Scripting & Development
 
-- [HTTPS Status Code Explainations](https://httpstatuses.com/)
+- [HTTPS Status Code Explanations](https://httpstatuses.com/)
 - [shields.io](https://shields.io)
+- [Carbon - Beautiful Code Snippets](https://carbon.now.sh/T1BQoqf2hzlMLWEWAEfG)
 - [Unicode Character DB](http://www.unicode.org/reports/tr44/#GC_Values_Table)
 
 
