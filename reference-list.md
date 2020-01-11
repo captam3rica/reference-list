@@ -603,6 +603,7 @@ https://jamf.it/dep-debug
 - [Communications Flow, EAS with SEG](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/9.5/vmware-airwatch-guides-95/GUID-AW95-CommunicationFlow.html)
 - KCD
 
+	- [MIT Kerberos Documentation](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html)
 	- [Kerberos Error Code: 0x7 KDC_ERR_S_PRINCIPAL_UNKNOWN](https://social.technet.microsoft.com/wiki/contents/articles/2064.kerberos-error-code-0x7-kdc-err-s-principal-unknown-dsforum2wiki.aspx)
 		- [Service Logons Fail Due to Incorrectly Set SPNs](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10)?redirectedfrom=MSDN)
 	- [4771(F): Kerberos pre-authentication failed.](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4771)
