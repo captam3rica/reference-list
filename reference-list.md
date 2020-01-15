@@ -5,69 +5,106 @@
 ## TOC
 
 1. [Apple  ](#macintosh)
-	1. [Tools](#macos_tools)
-	1. [Handy Terminal Commands](#macos_terminal_commands)
-	1. [Documentation](#macos_documentation)
-	2. [Apple Device Automation](#apple_device_automation)
-2. [Unix & GNU/Linux](#unix_linux)
-3. [Windows](#windows)
-1. [MDM](#mdm)
-	1. [Apple](#apple_apns)
-	1. [Jamf](#jamf)
-	2. [WorkspaceONE](#wso)
-	3. [MSFT Azure](#msft_azure)
-	3. [Mobile Iron](#MI)
-1. [Virtualization](#virtualization)
-2. [Google Enterprise](#google_enterprise)
-1. [Related to Scripting & Development](#scripting-and-languages)
-	1. [Python](#python)
-	1. [Swift](#swift_code)
-	1. [Bash](#bash)
-	1. [Atom](#atom)
-	1. [Markdown](#markdown)
 
----
+	1. [Tools](#macos_tools)
+	2. [Handy Sites](#macos_sites)
+	3. [Handy Terminal Commands](#macos_terminal_commands)
+	4. [Documentation](#macos_documentation)
+	5. [Apple Device Automation](#apple_device_automation)
+	6. [Networking & Wi-Fi](macos_network_and_wifi)
+
+1. [Unix & GNU/Linux](#unix_linux)
+1. [Windows](#windows)
+
+    1. Tools
+    2. MSFT Office
+    3. Active Directory/AzureAD/LDAP
+    4. OIDC & Microsoft Identity Platform
+    5. SCCM Administration
+    6. Image Creation
+    7. Handy Commands
+    8. Error Codes
+
+1. [MDM](#mdm)
+
+	1. [Apple](#mdm_apple_apns)
+	1. [Jamf](#mdm_jamf)
+	2. [WorkspaceONE](#mdm_wso)
+	3. [MSFT Device Manager](#mdm_msft_device_manager)
+	3. [Mobile Iron](#mdm_mobile_iron)
+	4. [Google Enterprise](mdm_google_enterprise)
+
+1. [Identity & Access Management](#idam)
+
+    1. [WorkspaceONE Access](#idam_wso_access)
+
+1. [Virtualization](#virtualization)
+
+    1. VMware Horizon
+
+1. [Certificate Information](#cert_information)
+1. [Scripting & Development](#scripting-and-languages)
+
+    1. [Code Signing](@scripting_code_signing)
+    1. Git
+    1. [Python](#python)
+    1. [Swift](#swift_code)
+    1. [Bash](#bash)
+    1. Vim
+    1. [Atom](#atom)
+    1. [Markdown](#markdown)
+    2. RegEx
+    3. PowerShell
+    4. sed
+
+1. Software
+
+    1. Opera Browser Settings
+
+1. Security
+
+    1. Handy Commands
 
 <a name="macintosh"></a>
 
 ## Related to Apple Macintosh Support & Administration
 
-- [HP Printer Driver FTP](ftp://ftp.hp.com/pub/softlib/software12/HP_Quick_Start/osx/Installations/Essentials//)
-
-
 <a name="macos_tools"></a>
+
 ### Tools
 
 - [Packages](http://s.sudre.free.fr/Software/Packages/about.html): Awesome package creator
-- [AutoPkg](https://autopkg.github.io/autopkg/)
+	- [User Guide](http://s.sudre.free.fr/Software/documentation/Packages/en_2017/index.html)
+- [AutoPkg](https://autopkg.github.io/autopkg/) - AutoPkg is a system for automatically preparing software for distribution to managed clients. Recipes allow you to specify a series of simple actions which combined together can perform complex tasks, similar to Automator workflows or Unix pipes.
 	- [recipe-robot](https://github.com/homebysix/recipe-robot): help create AutoPkg recipes.
 - [Suspicious Package](http://www.mothersruin.com/software/SuspiciousPackage/get.html): look inside of packages. 
-- [PPPC Utility (Jamf)](https://github.com/jamf/PPPC-Utility)
-- [Profile Creator](https://github.com/ProfileCreator/ProfileCreator)
+- [PPPC Utility (Jamf)](https://github.com/jamf/PPPC-Utility) - PPPC Utility is a macOS (10.13 and newer) application for creating configuration profiles containing the Privacy Preferences Policy Control payload for macOS. The profiles can be saved locally signed or unsigned. Profiles can also be uploaded directly to a Jamf Pro server.
+- [Profile Creator](https://github.com/ProfileCreator/ProfileCreator) - macOS application to create configuration profiles.
 - [Payload-Free-Package-Creator](https://github.com/rtrouton/Payload-Free-Package-Creator): when you want to just dumb a script somewhere.
 - [Google Santa](https://github.com/google/santa): Application blacklisting
 - [DEPNotify](https://gitlab.com/Mactroll/DEPNotify): Simple tool to display
     what is happening during DEP enrollment on the Mac.
     - [cannonball](http://cannonball.tombridge.com/2017/04/27/getting-started-with-installapplication-depnotify-and-simplemdm/)
-- [SplashBuddy](https://github.com/Shufflepuck/SplashBuddy)
-- [ManagedMac](http://dayglojesus.github.io/managedmac/): puppet plugin for managing mac.
-- [Dock Master](https://github.com/Error-freeIT/Dock-Master)
+- [SplashBuddy](https://github.com/Shufflepuck/SplashBuddy) - SplashBuddy goal is to provide an elegant and secure onboarding process for Mac users using DEP.
+- [ManagedMac](http://dayglojesus.github.io/managedmac/) - puppet plugin for managing mac.
+- [Dock Master](https://github.com/Error-freeIT/Dock-Master) - Dock Master is a tool for generating dock profiles and dock packages.
 - [mas-cli](https://github.com/mas-cli/mas): App Store from the CLI    
 - [NoMAD](https://nomad.menu/downloads/ "No More Active Directory"): Active
     Directory broker client. OpenSource alt to Apple's Enterprise Connect
     service
-- [AutoDMG](https://github.com/MagerValp/AutoDMG)
-- [precache](https://github.com/krypted/precache): Pull updates down top the
+- [AutoDMG](https://github.com/MagerValp/AutoDMG) - The award winning AutoDMG takes a macOS installer (10.10 or newer) and builds a system image suitable for deployment with Imagr, DeployStudio, LANrev, Jamf Pro, and other asr-based imaging tools.
+- [precache](https://github.com/krypted/precache) - Pull updates down top the
     Apple macOS Server Caching service.
-- MCXToProfile: convert `.plist` configuration files to `.mobileconfig` files for
-    deployment through **Profile Manager**
-- Automator
-- Apple Configurator2
-- [EraseInstall](https://bitbucket.org/prowarehouse-nl/erase-install/src/master/)
+- [MCXToProfile](https://github.com/timsutton/mcxToProfile) - mcxToProfile is a simple command-line utility to create "Custom Settings" Configuration Profiles without the need for the Profile Manager Device Management service in OS X Server 10.7 and 10.8.
+- [Automator](https://configautomation.com)
+- [Apple Configurator 2](https://help.apple.com/configurator/mac/2.0/) - Apple Configurator 2 makes it easy to deploy iPad, iPhone, iPod touch, and Apple TV devices in your school or business.
+- [EraseInstall](https://bitbucket.org/prowarehouse-nl/erase-install/src/master/) - EraseInstall.app for macOS is designed to allow users to easily erase the HD on their Mac and install a fresh copy of macOS. The application is a wrapper around the command `startosinstall`.
 - [InstallApplications](https://github.com/erikng/installapplications):
     dynamically download packages for use with `InstallApplication` 
-- [Recipe Robot](https://github.com/homebysix/recipe-robot)
-    
+- [Recipe Robot](https://github.com/homebysix/recipe-robot) - Recipe Robot is the easiest way to create new AutoPkg recipes for simple Mac apps.
+- [vfuse](https://github.com/chilcote/vfuse) - Takes a never-booted DMG and converts it to a VMware Fusion VM.    
+
+<a name="macos_sites"></a> 
 
 ### Handy Sites
 
@@ -76,7 +113,8 @@
 - [https://derflounder.wordpress.com](https://derflounder.wordpress.com)
     
 
-<a name="macos_terminal_commands"></a>    
+<a name="macos_commands"></a>
+
 ### Handy Commands
 
 - Query LDAP
@@ -162,6 +200,7 @@
 
 
 <a name="macos_documentation"></a>
+
 ### Documentation
 
 #### Apple KBs
@@ -201,7 +240,6 @@
 - [Disabled Accounts](https://www.jamf.com/jamf-nation/discussions/18243/password-policy-profile-disables-user-account)
 - [Setting Printer Options Via CLI](http://www.brunerd.com/blog/2012/03/13/getting-and-setting-ppd-options-via-command-line-for-use-with-lpadmin-in-os-x/)
 
-	
 
 #### MDM Protocol Related
 
@@ -212,7 +250,9 @@
 - [MacOS Deployment Reference](https://help.apple.com/deployment/macos/#/ior5d40635d0)
 
 
-#### Networking & Wi-Fi
+<a name="macos_network_and_wifi"></a>
+
+### Networking & Wi-Fi
 
 - [HT210060 - Use Apple products on enterprise networks](https://support.apple.com/en-us/HT210060)
 - [HT201999 - About macOS, iOS, and iTunes server host connections and iTunes background processes](https://support.apple.com/en-us/HT201999)
@@ -221,7 +261,7 @@
 - [Port Specifications for Apple Services](https://support.apple.com/en-us/HT202944)
 
 
-#### Security
+### Security
 
 - [CIS Benchmark - Apple](https://www.cisecurity.org/benchmark/apple_os/)
 - [Sudoers Modification](https://derflounder.wordpress.com/2016/07/11/editing-etcsudoers-to-manage-sudo-rights-for-users-and-groups/)
@@ -243,7 +283,7 @@
 		`security find-generic-password -l Hermes`
 
 
-#### Encryption & FileVault
+### Encryption & FileVault
 
 - [Manage FileVault with `fdesetup`](https://derflounder.wordpress.com/2015/12/20/managing-el-capitans-filevault-2-with-fdesetup/)
 - [FileVault Institutional Recovery Keys - DerFlounder](https://derflounder.wordpress.com/2014/08/13/filevault-2-institutional-recovery-keys-creation-deployment-and-use/)
@@ -432,7 +472,8 @@
 
 ## MDM
 
-<a name="apple_apns"></a>
+<a name="mdm_apple_apns"></a>
+
 ### Apple
 
 - [MacOS WiFi Login Window Profile]( https://ntsystems.it/post/joining-wifi-before-login-on-mac-os-x-108)
@@ -476,7 +517,8 @@ https://jamf.it/dep-debug
 1. Run the Mac through the DEP prestage enrollment as normal, once booted to the Desktop, we should find the log written to: /Library/Logs/ManagedClient/ManagedClient.log
 
 
-<a name="jamf"></a> 
+<a name="mdm_jamf"></a>
+ 
 ### Jamf
 
 *API Documentation*
@@ -571,7 +613,7 @@ https://jamf.it/dep-debug
 - [Composer User Guide](https://www.jamf.com/resources/product-documentation/composer-user-guide/)
 
 
-<a name=“wso”></a>
+<a name=“mdm_wso”></a>
 ### Workspace ONE
 
 - [Airwatch Samples](https://github.com/vmware-samples/AirWatch-samples/tree/master/Windows-Samples/Sensors)
@@ -619,62 +661,51 @@ https://jamf.it/dep-debug
 - [Workspace ONE Provisioning Tool](https://labs.vmware.com/flings/vmware-workspace-one-provisioning-tool)
 
 
-<a name=“msft_azure”></a>
+<a name=“mdm_msft_device_manager”></a>
 ### MSFT Device Manager
 
 - [REST API](https://docs.microsoft.com/en-us/rest/api/azure/)
 
-<a name=“MI”></a>
+<a name=“mdm_mobile_iron”></a>
 ### Mobile Iron
 
 
-## Certificate Information
+<a name="mdm_google_enterprise"></a>
 
-- [SSL Checker with SSL Shopper](https://www.sslshopper.com/ssl-checker.html#hostname=https://awseg.foley.com) - Enter a site FQDN to see if it has a proper SSL certificate associated with it.
+### Google Enterprise
 
-- [Build a Concatenated PEM File](https://kb.vmware.com/s/article/2046591)
-	- IDM Server PEM Cert
+#### Handy Links
 
-- Concatenate Root and Intermediate certs
-
-	- Open a text editor
-	- Copy the intermediate certs as they should appear in the chain
-		- This can also be done in Terminal via the following command.
-			
-			```bash
-			cat intermediate_cert.cer \
-				intermediate_cert_2_cer \
-				intermediate_cert_n \
-				root_cert.cer > concatenated_cert.pfx
-			```
-
-	- Add the Root cert in last
-	- Name the file with the `.pfx` file extension
-
-- [Convert Certificate Files to One-Line PEM Format](https://docs.vmware.com/en/Unified-Access-Gateway/3.3.1/com.vmware.uag-331-deploy-config.doc/GUID-870AF51F-AB37-4D6C-B9F5-4BFEB18F11E9.html#GUID-870AF51F-AB37-4D6C-B9F5-4BFEB18F11E9)
-	- UAG SAML file signing
-	- IdM Appliance SAML Cert
-	- vRealize
-
-	`cat server_cert.cer key_filename.key cacerts.cer > multi_part.pem`
-	
-- [Convert P7B to PFX with OpenSSL](https://www.lisenet.com/2014/convert-p7b-to-pfx-with-openssl/) - If you need to convert from P7B to PFX make sure that you have both the certificate and the private key handy for this command sequence.
-
-- DigiCert
-
-	- [CSR Creation Instructions for Microsoft Servers](https://www.digicert.com/util/csr-creation-microsoft-servers-using-digicert-utility.htm) - Walks through the CSR request process using the DigiCert tool and walks through the process of exporting a Windows cert and private key from the MSFT Certificate Manager console.
-	- [How to Export/Back Up Your SSL Certificate w/Private Key](https://www.digicert.com/ssl-support/certificate-pfx-file-export-import-iis-10.htm#export-pfx) - Use IIS 10 to export a copy of your SSL certificate from one server and import and configure it on a (different) Windows Server 2016
+- [About Google Cloud Directory Sync](https://support.google.com/a/answer/106368?hl=en)
+- [G Suite Admin Help | Administrator Privilege Definitions](https://support.google.com/a/answer/1219251?hl=en)
+- [Manage Networks](https://support.google.com/chrome/a/answer/2634553)
+- [Google Chrome Enterprise Help | Set Chrome User Policies](https://support.google.com/chrome/a/answer/2657289?hl=en)
+- [Google Chrome Enterprise Help | Set Chrome Device Policies](https://support.google.com/chrome/a/answer/1375678?hl=en)
+- [Google Chrome Enterprise Help | Google Cloud Print Services](https://support.google.com/chrome/a/answer/3179168)
+- [Google Support](https://support.google.com/)
+- [Site Help pages](https://support.google.com/sites/answer/98081)
+- [G Suite Help | Build your support team](https://gsuite.google.com/setup/resources/support-users/)
+- [Connect to LDAP](https://support.google.com/a/answer/9089736?hl=en)
 
 
-\[[top](#top)]
-<a name="virtualization"></a>
+#### Commands 
 
-## Virtualization
+- Google Enterprise Mode - `Ctrl+Alt+E`
+- Wipe Device - `Esc+Refresh+Power`
+	- Once in Developer Mode press - `Enter` then `Spacebar`
 
--	[VDI Design Guide](https://vhojan.nl/category/vdi-design-guide/) | Johan van Amersfoort
-- 	[Desktop as a Service: Everything you need to know about DaaS and hosted VDI](https://www.amazon.com/gp/product/0985217421/ref=ox_sc_act_title_2?smid=ATVPDKIKX0DER&psc=1) | Brian Madden
--	[VMware vSphere 6.5 Hosted Resources Deep Dive](https://www.amazon.com/gp/product/1540873064/ref=ox_sc_act_title_3?smid=ATVPDKIKX0DER&psc=1) | Frank Denneman
 
+#### Locations to Know
+
+- `chrome://policies` - verify that all required policies have been properly applied.
+- `chrome://version` - Chrome and platform version of the affected Chrome device.
+
+
+<aname="idam"></a>
+
+## Identity & Access Management
+
+<aname="idam_wso_access"></a>
 
 ### VMware WSO Access (formerly IDM)
 
@@ -700,6 +731,16 @@ https://jamf.it/dep-debug
 
 	`https://<idM_SERVER_NAME>/hc/API/1.0/REST/system/health?pretty`
 	`https:/</idm_server_name>/SAAS/API/1.0/REST/system/health`
+
+
+\[[top](#top)]
+<a name="virtualization"></a>
+
+## Virtualization
+
+-	[VDI Design Guide](https://vhojan.nl/category/vdi-design-guide/) | Johan van Amersfoort
+- 	[Desktop as a Service: Everything you need to know about DaaS and hosted VDI](https://www.amazon.com/gp/product/0985217421/ref=ox_sc_act_title_2?smid=ATVPDKIKX0DER&psc=1) | Brian Madden
+-	[VMware vSphere 6.5 Hosted Resources Deep Dive](https://www.amazon.com/gp/product/1540873064/ref=ox_sc_act_title_3?smid=ATVPDKIKX0DER&psc=1) | Frank Denneman
 
 ### VMware Horizon
 
@@ -914,44 +955,68 @@ The command to collect the logs from a remote machine is:
 
 - [Horizon 7 Log Files](https://docs.vmware.com/en/VMware-Horizon-7/7.10/horizon-security/GUID-79A2A422-AF18-41BC-B15F-0117DBB10CCC.html	)
 
-<a name="google_enterprise"></a>
-## Google Enterprise
+<a name="cert_information"></a
 
-### Handy Links
+## Certificate Information
 
-- [About Google Cloud Directory Sync](https://support.google.com/a/answer/106368?hl=en)
-- [G Suite Admin Help | Administrator Privilege Definitions](https://support.google.com/a/answer/1219251?hl=en)
-- [Manage Networks](https://support.google.com/chrome/a/answer/2634553)
-- [Google Chrome Enterprise Help | Set Chrome User Policies](https://support.google.com/chrome/a/answer/2657289?hl=en)
-- [Google Chrome Enterprise Help | Set Chrome Device Policies](https://support.google.com/chrome/a/answer/1375678?hl=en)
-- [Google Chrome Enterprise Help | Google Cloud Print Services](https://support.google.com/chrome/a/answer/3179168)
-- [Google Support](https://support.google.com/)
-- [Site Help pages](https://support.google.com/sites/answer/98081)
-- [G Suite Help | Build your support team](https://gsuite.google.com/setup/resources/support-users/)
-- [Connect to LDAP](https://support.google.com/a/answer/9089736?hl=en)
+- [SSL Checker with SSL Shopper](https://www.sslshopper.com/ssl-checker.html#hostname=https://awseg.foley.com) - Enter a site FQDN to see if it has a proper SSL certificate associated with it.
 
+- Check the SSL/TLS cert using openssl
 
-### Commands 
+    `openssl s_client -connect example.com:443`
 
-- Google Enterprise Mode - `Ctrl+Alt+E`
-- Wipe Device - `Esc+Refresh+Power`
-	- Once in Developer Mode press - `Enter` then `Spacebar`
+- [Build a Concatenated PEM File](https://kb.vmware.com/s/article/2046591)
+	- IDM Server PEM Cert
 
+- Concatenate Root and Intermediate certs
 
-### Locations to Know
+	- Open a text editor
+	- Copy the intermediate certs as they should appear in the chain
+		- This can also be done in Terminal via the following command.
+			
+			```bash
+			cat intermediate_cert.cer \
+				intermediate_cert_2_cer \
+				intermediate_cert_n \
+				root_cert.cer > concatenated_cert.pfx
+			```
 
-- `chrome://policies` - verify that all required policies have been properly applied.
-- `chrome://version` - Chrome and platform version of the affected Chrome device.
+	- Add the Root cert in last
+	- Name the file with the `.pfx` file extension
+
+- [Convert Certificate Files to One-Line PEM Format](https://docs.vmware.com/en/Unified-Access-Gateway/3.3.1/com.vmware.uag-331-deploy-config.doc/GUID-870AF51F-AB37-4D6C-B9F5-4BFEB18F11E9.html#GUID-870AF51F-AB37-4D6C-B9F5-4BFEB18F11E9)
+	- UAG SAML file signing
+	- IdM Appliance SAML Cert
+	- vRealize
+
+	`cat server_cert.cer key_filename.key cacerts.cer > multi_part.pem`
+	
+- [Convert P7B to PFX with OpenSSL](https://www.lisenet.com/2014/convert-p7b-to-pfx-with-openssl/) - If you need to convert from P7B to PFX make sure that you have both the certificate and the private key handy for this command sequence.
+
+- DigiCert
+
+	- [CSR Creation Instructions for Microsoft Servers](https://www.digicert.com/util/csr-creation-microsoft-servers-using-digicert-utility.htm) - Walks through the CSR request process using the DigiCert tool and walks through the process of exporting a Windows cert and private key from the MSFT Certificate Manager console.
+	- [How to Export/Back Up Your SSL Certificate w/Private Key](https://www.digicert.com/ssl-support/certificate-pfx-file-export-import-iis-10.htm#export-pfx) - Use IIS 10 to export a copy of your SSL certificate from one server and import and configure it on a (different) Windows Server 2016
 
 
 \[[top](#top)]
 <a name="scripting-and-languages"></a>
+
 ## Related to Scripting & Development
 
 - [HTTPS Status Code Explanations](https://httpstatuses.com/)
 - [shields.io](https://shields.io)
 - [Carbon - Beautiful Code Snippets](https://carbon.now.sh/T1BQoqf2hzlMLWEWAEfG)
 - [Unicode Character DB](http://www.unicode.org/reports/tr44/#GC_Values_Table)
+
+
+<a name="scripting_code_signing"></a>
+
+### Code Signing
+
+- Sign a code, plist, or mobileconfig file using a developer certificate.
+
+	`codesign --sign "Mac Developer: Example Name (XXXXXXXXXX)" --verbose <configuration_profile_name>.mobileconfig`
 
 
 ### Git
