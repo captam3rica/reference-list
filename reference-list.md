@@ -197,6 +197,10 @@
 - Clear passcode profile settings
 	
 	`sudo pwpolicy -clearaccountpolicies`
+	
+- Boot macOS in Verbose Mode
+
+    `sudo nvram boot-args="v"`
 
 
 <a name="macos_documentation"></a>
@@ -1311,6 +1315,20 @@ atom-text-editor.editor .selection .region {
 
 ### PowerShell
 
+- [Running Remote Commands](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands?view=powershell-7)
+
+    - `Enter-PSSession <computer_name>`
+    - `Exit-PSSession`
+    - `$SESSION = New-PSSession -ComputerName <server_01>`
+    
+        - This session can now be used throughout the PS script. Anything run agains the computers in the `$SESSION` var will show up on the local machine that invoked the PS script.
+
+    - `Invoke-Command -ComputerName <server_01>, <server_n> -ScriptBlock {remote_ps_command}`
+    - `Invoke-Command -ComputerName <server_01> -FilePath <path\to\local\script.ps1`
+
+        - The script needs to be accessible to your local machine. The machine that you are evoking the command from.
+
+- [Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7) - Gets the content of the item at the specified location.
 - [Memory and Handle Quotas in the WMI Provider Ser](https://blogs.technet.microsoft.com/askperf/2008/09/16/memory-and-handle-quotas-in-the-wmi-provider-service/)
 - Bypass Execution Policies - <https://blog.netspi.com/15-ways-to-bypass-the-powershell-execution-policy/>
 - [Passing Credentials](https://gallery.technet.microsoft.com/scriptcenter/Execute-PowerShell-Script-38881dce)
