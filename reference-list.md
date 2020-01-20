@@ -75,16 +75,25 @@
 
 - [Packages](http://s.sudre.free.fr/Software/Packages/about.html): Awesome package creator
 	- [User Guide](http://s.sudre.free.fr/Software/documentation/Packages/en_2017/index.html)
+- [iMazing Profile Editor](https://imazing.com/profile-editor) - iMazing Profile Editor lets you create, edit, and sign Apple configuration profiles. Define settings with ease, ready to be deployed locally or via MDM to fleets of iPhones, iPads, Macs, and other Apple devices.
+
+    - [Manifests](https://github.com/ProfileCreator/ProfileManifests/tree/master/Manifests)
+
 - [AutoPkg](https://autopkg.github.io/autopkg/) - AutoPkg is a system for automatically preparing software for distribution to managed clients. Recipes allow you to specify a series of simple actions which combined together can perform complex tasks, similar to Automator workflows or Unix pipes.
-	- [recipe-robot](https://github.com/homebysix/recipe-robot): help create AutoPkg recipes.
+
+	- [recipe-robot](https://github.com/homebysix/recipe-robot): help create AutoPkg 
+recipes.
+
 - [Suspicious Package](http://www.mothersruin.com/software/SuspiciousPackage/get.html): look inside of packages. 
 - [PPPC Utility (Jamf)](https://github.com/jamf/PPPC-Utility) - PPPC Utility is a macOS (10.13 and newer) application for creating configuration profiles containing the Privacy Preferences Policy Control payload for macOS. The profiles can be saved locally signed or unsigned. Profiles can also be uploaded directly to a Jamf Pro server.
-- [Profile Creator](https://github.com/ProfileCreator/ProfileCreator) - macOS application to create configuration profiles.
+- (NO LONGER DEVELOPED)[Profile Creator](https://github.com/ProfileCreator/ProfileCreator) - macOS application to create configuration profiles.
 - [Payload-Free-Package-Creator](https://github.com/rtrouton/Payload-Free-Package-Creator): when you want to just dumb a script somewhere.
 - [Google Santa](https://github.com/google/santa): Application blacklisting
 - [DEPNotify](https://gitlab.com/Mactroll/DEPNotify): Simple tool to display
     what is happening during DEP enrollment on the Mac.
+
     - [cannonball](http://cannonball.tombridge.com/2017/04/27/getting-started-with-installapplication-depnotify-and-simplemdm/)
+
 - [SplashBuddy](https://github.com/Shufflepuck/SplashBuddy) - SplashBuddy goal is to provide an elegant and secure onboarding process for Mac users using DEP.
 - [ManagedMac](http://dayglojesus.github.io/managedmac/) - puppet plugin for managing mac.
 - [Dock Master](https://github.com/Error-freeIT/Dock-Master) - Dock Master is a tool for generating dock profiles and dock packages.
