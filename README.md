@@ -1,5 +1,9 @@
 # Reference List
 
+This is where I put handy links, commands, 3rd party resources, documentation links, etc that I have found helpful in my technology journey
+
+Referenced often, Updated simi-regularly :)
+
 <a name="top"></a>
 
 ## TOC
@@ -8,10 +12,14 @@
 
 	1. [Tools](#macos_tools)
 	2. [Handy Sites](#macos_sites)
-	3. [Handy Terminal Commands](#macos_terminal_commands)
+	3. [Handy Terminal Commands](#macos_commands)
 	4. [Documentation](#macos_documentation)
 	5. [Apple Device Automation](#apple_device_automation)
-	6. [Networking & Wi-Fi](macos_network_and_wifi)
+	6. [Networking & Wi-Fi](#macos_network_and_wifi)
+	7. [Security](#macos_security)
+	8. [Encryption & FileVault](#macos_encryption_and_fv)
+	9. [Apple Device Automation](#apple_device_automation)
+	10. [Support](#apple_support)
 
 1. [Unix & GNU/Linux](#unix_linux)
 1. [Windows](#windows)
@@ -274,7 +282,14 @@ recipes.
 - [Port Specifications for Apple Services](https://support.apple.com/en-us/HT202944)
 
 
+<a name="macos_security"></a>
+
 ### Security
+
+- [NIST - Apple Security](https://github.com/usnistgov/applesec)
+
+    This page contains supplemental resources to NIST Special Publication (SP) 800-179 Revision 1, Guide to Securing macOS 10.12 Systems for IT Professionals: A NIST Security Configuration Checklist. The publication is located at https://csrc.nist.gov/publications/detail/sp/800-179/rev-1/draft.
+Please send any comments to 800-179comments@nist.gov.
 
 - [CIS Benchmark - Apple](https://www.cisecurity.org/benchmark/apple_os/)
 - [Sudoers Modification](https://derflounder.wordpress.com/2016/07/11/editing-etcsudoers-to-manage-sudo-rights-for-users-and-groups/)
@@ -295,6 +310,7 @@ recipes.
 
 		`security find-generic-password -l Hermes`
 
+<a name="macos_encryption_and_fv"></a>
 
 ### Encryption & FileVault
 
@@ -303,6 +319,7 @@ recipes.
 
 
 <a name="apple_device_automation"></a>
+
 ### Automation
 
 - [ConfigAutomation](https://configautomation.com/)  
@@ -315,6 +332,8 @@ recipes.
 
 	`$HOME/Library/Caches/com.apple.configurator.AttachedDevices`
 
+
+<a name="apple_support"></a>
 
 ### Support
 
@@ -542,6 +561,12 @@ https://jamf.it/dep-debug
 	- Enbale/disable Bluetooth
 
 
+*Education*
+
+- [Jamf 200 Course Materials](https://docs.jamf.com/education-services/resources/20190920/200_Resources.html)
+- [Jamf 300 Course Materials](https://docs.jamf.com/education-services/resources/20190920/300_Resources.html)
+- [Jamf 400 Course Materials](https://docs.jamf.com/education-services/resources/20190920/400_Resources.html)
+
 *Maintenance URLs*
 
 - [Service Status](status.jamf.com)
@@ -556,6 +581,9 @@ https://jamf.it/dep-debug
 *Infrastructure*
 
 - [JIM Install Guide](http://docs.jamf.com/infrastructure-manager/1.3.2/Installing_a_Jamf_Infrastructure_Manager_Instance.html)
+    
+    - [JIM Multi-site](https://github.com/jamf/Multi-JIM/blob/master/Multi-Instance%20JIM-Install.sh)
+    
 - [AzureAD LDAPS](https://www.jamf.com/jamf-nation/discussions/25876/a-guide-to-jss-azure-ad-integration-ldap-+-sso)
 - [AzureAD Integration](https://marketplace.jamf.com/details/azure-active-directory/)
 - [Okta LDAP Integration](https://travellingtechguy.eu/integrating-okta-ldap-in-jamf-pro/)
@@ -591,7 +619,11 @@ https://jamf.it/dep-debug
 - [SCEP - Microsoft CA Integration](https://www.ibm.com/support/knowledgecenter/en/SS8H2S/com.ibm.mc.doc/ce_source/concepts/ce_ca_ms_ca_int.htm)
 
 
+*Extension Attributes*
+
+- [Jamf GitHub Extension Attributes Repo](https://github.com/jamf/Jamf-Nation-Extension-Attributes)
 *Misc Documentation*
+
 
 - [All Product Documentation](https://www.jamf.com/resources/product-documentation/)
 - [Jamf Pro Security Overview](https://www.jamf.com/resources/product-documentation/jamf-pro-security-overview/)
@@ -629,7 +661,7 @@ https://jamf.it/dep-debug
 <a name=“mdm_wso”></a>
 ### Workspace ONE
 
-- [Airwatch Samples](https://github.com/vmware-samples/AirWatch-samples/tree/master/Windows-Samples/Sensors)
+- [MacOS Samples](https://github.com/vmware-samples/euc-samples/tree/master/macOS-Samples)
 - [AirWatch Learning Path](https://mylearn.vmware.com/mgrReg/plan.cfm?plan=47955&ui=www_edu)
 - [MacOS Profile Guide](https://my.air-watch.com/help/9.1/en/Content/Platform_Guides/macOS/C/Profiles_Overview.htm?TocPath=PROFILES|macOS%C2%A0Device%20Profiles|_____0)
 - [Documentation](https://resources.air-watch.com/documentation?sort=newest)
@@ -687,8 +719,10 @@ https://jamf.it/dep-debug
 
 ### Google Enterprise
 
+
 #### Handy Links
 
+- [Chrome Enterprise policy list](https://cloud.google.com/docs/chrome-enterprise/policies/#contentSettings) - definitions for chrome settings that can be managed via configuration policy.
 - [About Google Cloud Directory Sync](https://support.google.com/a/answer/106368?hl=en)
 - [G Suite Admin Help | Administrator Privilege Definitions](https://support.google.com/a/answer/1219251?hl=en)
 - [Manage Networks](https://support.google.com/chrome/a/answer/2634553)
@@ -782,11 +816,6 @@ https://jamf.it/dep-debug
 #### Login Portals
 
 - https://cloud.horizon.vmware.com/login
-
-
-#### Certificate Information
-
-Moved this information to its own section
 
 
 #### Upgrading
@@ -976,7 +1005,9 @@ The command to collect the logs from a remote machine is:
 
 - Check the SSL/TLS cert using openssl
 
-    `openssl s_client -connect example.com:443`
+    `openssl s_client -connect example.com:443 -showcerts`
+    
+    This can be uploaded directly to an MDM server if using LDAPS to do queries over 636
 
 - [Build a Concatenated PEM File](https://kb.vmware.com/s/article/2046591)
 	- IDM Server PEM Cert
@@ -1011,6 +1042,11 @@ The command to collect the logs from a remote machine is:
 	- [CSR Creation Instructions for Microsoft Servers](https://www.digicert.com/util/csr-creation-microsoft-servers-using-digicert-utility.htm) - Walks through the CSR request process using the DigiCert tool and walks through the process of exporting a Windows cert and private key from the MSFT Certificate Manager console.
 	- [How to Export/Back Up Your SSL Certificate w/Private Key](https://www.digicert.com/ssl-support/certificate-pfx-file-export-import-iis-10.htm#export-pfx) - Use IIS 10 to export a copy of your SSL certificate from one server and import and configure it on a (different) Windows Server 2016
 
+- [OpenSSL for Windows](http://slproweb.com/products/Win32OpenSSL.html)
+
+    - `set OPENSSL_CONF=C:\OpenSSL-Win32\bin\openssl.cfg`
+
+- [OpenSSL.org](http://www.openssl.org/)
 
 \[[top](#top)]
 <a name="scripting-and-languages"></a>
