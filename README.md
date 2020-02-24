@@ -58,7 +58,8 @@ Referenced often, Updated simi-regularly :)
     1. [Python](#python)
     1. [Swift](#swift_code)
     1. [Bash](#bash)
-    1. Vim
+    1. [Vim](#vim)
+    2. [VSCode](#vscode)
     1. [Atom](#atom)
     1. [Markdown](#markdown)
     2. RegEx
@@ -101,6 +102,8 @@ recipes.
     what is happening during DEP enrollment on the Mac.
 
     - [cannonball](http://cannonball.tombridge.com/2017/04/27/getting-started-with-installapplication-depnotify-and-simplemdm/)
+
+- [mac-ibm-enrollment-app](https://github.com/IBM/mac-ibm-enrollment-app) - The Mac@IBM enrollment app makes setting up macOS with Jamf Pro more intuitive for users and easier for IT. The application offers IT admins the ability to gather additional information about their users during setup, allows users to customize their enrollment by selecting apps or bundles of apps to install during setup, and provides users with next steps when enrollment is complete.
 
 - [SplashBuddy](https://github.com/Shufflepuck/SplashBuddy) - SplashBuddy goal is to provide an elegant and secure onboarding process for Mac users using DEP.
 - [ManagedMac](http://dayglojesus.github.io/managedmac/) - puppet plugin for managing mac.
@@ -231,6 +234,8 @@ recipes.
 - [HT201260 - macOS Builds](https://support.apple.com/en-us/HT201260)
 - [HT201255 - Mac Startup Cmd Options](https://support.apple.com/en-us/HT201255)
 - [HT201853 - Apple Video Adapters and Cables](https://support.apple.com/en-us/HT201853 "About Apple Video Adapters and Cables")
+- [HT208987 - About Activation Lock on your Mac](https://support.apple.com/en-us/HT208987)
+    - [Activation Lock](https://support.apple.com/guide/mdm/activation-lock-apd593fdd1c9/web)
 
 
 #### White Papers
@@ -271,6 +276,15 @@ recipes.
 - [MacOS Deployment Reference](https://help.apple.com/deployment/macos/#/ior5d40635d0)
 
 
+### Apple Business Manager
+
+- [What are Managed Apple IDs in Apple Business Manager?](https://support.apple.com/guide/apple-business-manager/what-are-managed-apple-ids-tes78b477c81/1/web/1)
+- [Create Managed Apple IDs in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/create-managed-apple-ids-mdm1c9622977/web)
+- [Configure federated authentication with Microsoft Azure AD for Apple Business Manager](https://support.apple.com/guide/apple-business-manager/configure-federated-authentication-microsoft-apdc9611d0e0/1/web/1#apddc46155ee)
+- [Add federated domains in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/add-federated-domains-apdf867462bc/1/web/1)
+- [Intro to federated authentication with Apple Business Manager](https://support.apple.com/guide/apple-business-manager/intro-to-federated-authentication-apdb19317543/1/web/1)
+
+
 <a name="macos_network_and_wifi"></a>
 
 ### Networking & Wi-Fi
@@ -286,19 +300,30 @@ recipes.
 
 ### Security
 
-- [NIST - Apple Security](https://github.com/usnistgov/applesec)
+- [Apple Platform Security - 2019](https://manuals.info.apple.com/MANUALS/1000/MA1902/en_US/apple-platform-security-guide.pdf)
+- [App security overview](https://support.apple.com/guide/security/app-security-overview-sec35dd877d0/1/web/1)
+- [Product security certifications, validations, and guidance for SEP: Secure Key Store](https://support.apple.com/en-us/HT209632)
+- [NIST - Apple Security](https://github.com/usnistgov/applesec)  
 
     This page contains supplemental resources to NIST Special Publication (SP) 800-179 Revision 1, Guide to Securing macOS 10.12 Systems for IT Professionals: A NIST Security Configuration Checklist. The publication is located at https://csrc.nist.gov/publications/detail/sp/800-179/rev-1/draft.
 Please send any comments to 800-179comments@nist.gov.
 
 - [CIS Benchmark - Apple](https://www.cisecurity.org/benchmark/apple_os/)
 - [Sudoers Modification](https://derflounder.wordpress.com/2016/07/11/editing-etcsudoers-to-manage-sudo-rights-for-users-and-groups/)
+
 - PPPC
+
 	- [Derflounder](https://derflounder.wordpress.com/2018/08/31/creating-privacy-preferences-policy-control-profiles-for-macos/)
+
 - Approving KEXTs
+
 	- [Derflounder](https://derflounder.wordpress.com/2018/04/12/whitelisting-third-party-kernel-extensions-using-profiles/)
 	- [Vendor KEXT Info](https://docs.google.com/spreadsheets/d/1IWrbE8xiau4rU2mtXYji9vSPWDqb56luh0OhD5XS0AM/edit#gid=0)
+
+- SysEXT
+
 - [Making Changes to the authorizationdb](https://derflounder.wordpress.com/2014/02/16/managing-the-authorization-database-in-os-x-mavericks/) 
+
 	- `security authorizationdb read <system.preferences.[preferencez_setting_name>`
 	- `security authorizationdb read referenced.rights > /path/to/filename.plist`
 	- `security authorizationdb write system.preferences allow`
@@ -307,8 +332,8 @@ Please send any comments to 800-179comments@nist.gov.
 - The `security` command
 
 	- Find a specific keychain item by name
-
 		`security find-generic-password -l Hermes`
+
 
 <a name="macos_encryption_and_fv"></a>
 
@@ -578,15 +603,18 @@ https://jamf.it/dep-debug
 - [JamfCloud IP Addresses](https://www.jamf.com/jamf-nation/articles/409/permitting-inbound-outbound-traffic-with-jamf-cloud)
 
 
-*Infrastructure*
+*LDAP Integration*
 
 - [JIM Install Guide](http://docs.jamf.com/infrastructure-manager/1.3.2/Installing_a_Jamf_Infrastructure_Manager_Instance.html)
-    
     - [JIM Multi-site](https://github.com/jamf/Multi-JIM/blob/master/Multi-Instance%20JIM-Install.sh)
-    
-- [AzureAD LDAPS](https://www.jamf.com/jamf-nation/discussions/25876/a-guide-to-jss-azure-ad-integration-ldap-+-sso)
-- [AzureAD Integration](https://marketplace.jamf.com/details/azure-active-directory/)
+- [AzureAD LDAPS](https://www.jamf.com/jamf-nation/discussions/25876/a-guide-to-jss-azure-ad-integration-ldap-+-sso)    
+    - [MSFT Doc: LDAPS Integration](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-configure-ldaps)
+    - [MSFT Doc: Create and Configure an AD DS Instance](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance)
+    - [HCS: Integrating Jamf with Azure AD LDAPS](https://hcsonline.com/support/white-papers/a-guide-to-identity-management-with-azure-active-directory-jamf-pro)
 - [Okta LDAP Integration](https://travellingtechguy.eu/integrating-okta-ldap-in-jamf-pro/)
+
+*Certificate Services Integration*
+
 - [Jamf ADCS Connector](https://docs.jamf.com/ad-cs-connector/1.0.0/Jamf_AD_CS_Connector_Overview.html)
 
 
@@ -605,7 +633,7 @@ https://jamf.it/dep-debug
 *Conditional Access*
 
 - [Intune Integration - Traveling Tech Guy](https://travellingtechguy.eu/jamf-pro-and-ms-azure-intune-for-macos/)
-- [Jamf Pro Admin Guide - 10.15 - Intune integration](https://docs.jamf.com/10.15.0/jamf-pro/administrator-guide/Integrating_with_Microsoft_Intune.html)
+- [Integrating with Microsoft Intune to Enforce Compliance on Mac Computers Managed by Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/microsoft-intune/10.17.0/Introduction.html)
 - [Conditional Access with Azure](https://resources.jamf.com/documents/white-papers/conditional-access-going-beyond-perimeter-based-security.pdf)
 
 
@@ -622,8 +650,8 @@ https://jamf.it/dep-debug
 *Extension Attributes*
 
 - [Jamf GitHub Extension Attributes Repo](https://github.com/jamf/Jamf-Nation-Extension-Attributes)
-*Misc Documentation*
 
+*Misc Documentation*
 
 - [All Product Documentation](https://www.jamf.com/resources/product-documentation/)
 - [Jamf Pro Security Overview](https://www.jamf.com/resources/product-documentation/jamf-pro-security-overview/)
@@ -644,16 +672,29 @@ https://jamf.it/dep-debug
 #### Tools
 
 - Jamf Protect
-	- [Product Page](https://www.jamf.com/products/jamf-protect/)
-	- [Admin Guide](https://docs.jamf.com/jamf-protect/administrator-guide/Preface.html)
+    
+    - [YouTube: Introduction to Protect](https://www.youtube.com/watch?v=gsbfkCSjwxc&t=1s)`
+    - [Product Page](https://www.jamf.com/products/jamf-protect/)
+    - [Admin Guide](https://docs.jamf.com/jamf-protect/administrator-guide/Preface.html)
+    - [Evaluation Guide]( https://docs.jamf.com/jamf-protect/evaluation-guide/Overview.html)
+
 - [GitHub](https://github.com/jamf)
+
 	- [DEPNotify-Starter](https://github.com/jamf/DEPNotify-Starter)
-- [Jamf Connect](https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/)
+
+- Jamf Connect
+
+    - [Admin Guide](https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/)
+    - [Using FileVault with Jamf Connect Login](https://www.jamf.com/jamf-nation/articles/682/using-filevault-with-jamf-connect)
+    - [Understanding Jamf Connect with OpenID Connect Authentication](https://www.jamf.com/jamf-nation/articles/696/understanding-jamf-connect-with-openid-connect-authentication)
+    - [Configuring Jamf Connect with Azure AD Hybrid Identity Solutions](https://www.jamf.com/jamf-nation/articles/697/configuring-jamf-connect-with-azure-ad-hybrid-identity-solutions)
+
 	- Licensing
 		- Jamf Connect Verify preferences
 		- A .jamfconnectlicense file in /Library/Application Support/com.jamf.connect.verify
 		- A .jamfconnectlicense file in ~/Library/Application Support/com.jamf.connect.verify
 		- Note: To store the license in the preferences configuration profile, you must convert the license file to base64 format, and then use the LicenseFile key in your configuration profile.
+
 - [NoMAD Helper](https://www.youtube.com/watch?v=fQ4Epy1J7ZU)
 - [Composer User Guide](https://www.jamf.com/resources/product-documentation/composer-user-guide/)
 
@@ -683,11 +724,11 @@ https://jamf.it/dep-debug
 - [Workspace ONE UEM Docs](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1907/rn/VMware-Workspace-ONE-UEM-Release-Notes-1907.html)
 - [Device Profiles](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1908/iOS_Platform/GUID-AWT-IOS-PROFILE-OVERVIEW.html)
 	- [Windows](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1908/Windows_Desktop_Device_Management/GUID-AWT-PROFILE-OVERVIEWWD.html)
+- [Console Administrator Password Policies for Shared SaaS Environments (50122050)](https://kb.vmware.com/s/article/50122050)
 
 
 #### Secure Email Gateway
 
-- [Communications Flow, EAS with SEG](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/9.5/vmware-airwatch-guides-95/GUID-AW95-CommunicationFlow.html)
 - KCD
 
 	- [MIT Kerberos Documentation](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html)
@@ -699,6 +740,7 @@ https://jamf.it/dep-debug
 	- [Yet another common kerberos errors doc](https://pvtl.force.com/s/article/common-errors-and-resolutions)
 	- [Table of Kerberos v5 Status Codes](https://docs.oracle.com/cd/E19683-01/816-1331/kerberrs-1/index.html)
 	- [Troubleshooting Kerberos](https://docs.oracle.com/cd/E19253-01/816-4557/trouble-5/index.html)
+	- [413 Error from Exchange](https://stackoverflow.com/questions/15300064/getting-413-errors-on-iis-with-concurrent-sessions-using-the-same-https-client-c)
 
 #### Tools
 
@@ -1051,7 +1093,7 @@ The command to collect the logs from a remote machine is:
 \[[top](#top)]
 <a name="scripting-and-languages"></a>
 
-## Related to Scripting & Development
+## Scripting & Development
 
 - [HTTPS Status Code Explanations](https://httpstatuses.com/)
 - [shields.io](https://shields.io)
@@ -1113,9 +1155,7 @@ The Mac does not have the necessary developer tools installed.
 
 <a name="python"></a>
 
-### Python
-
-![](Screenshots/Python/python-icon.png)
+### ![](Screenshots/Python/python-icon.png) Python
 
 -	Install `pip` python package manager MacOS - **P**ip **I**nstalls **P**ackages
 	- `sudo easy_install pip`
@@ -1131,9 +1171,15 @@ The Mac does not have the necessary developer tools installed.
 - [Send emails](https://realpython.com/python-send-email/)
 - [RealPython.com](https://realpython.com)
 
+*PEPs*
+
+- [PEP0440: Version Identification and Dependency Specification](https://www.python.org/dev/peps/pep-0440/)
+
 *Learning Sites*
 
 - [CheckIO](https://checkio.org)
+- [Real Python: fstrings](https://realpython.com/python-f-strings/)
+- [Real Python: Python String Formatting Best Practices](https://realpython.com/python-string-formatting/)
 
 *Modules*
 
@@ -1146,13 +1192,26 @@ These wrappers don’t include documentation, please check Apple’s documention
 
 <a name="swift_code"></a>
 
-### Swift
-
-![](Screenshots/Swift/swift_icon.png)
+### ![](Screenshots/Swift/swift_icon.png) Swift
 
 #### Code Docs
 
 - [Updating and Deleting Keychain Items](https://developer.apple.com/documentation/security/keychain_services/keychain_items/updating_and_deleting_keychain_items)
+
+#### Swift Packages for Atom
+
+- [SwiftLint](https://realm.github.io/SwiftLint/) - A tool to enforce Swift style and conventions, loosely based on GitHub’s Swift Style Guide.
+
+    `brew install swiftlint`
+    
+- [linter-swiftlint](https://atom.io/packages/linter-swiftlint) - This linter plugin for Linter provides an interface to SwiftLint's styling advice. Used with files that have the Swift syntax.
+
+- [language-swift](https://atom.io/packages/language-swift) - Swift language support for Atom.
+
+- [autocomplete-swift](https://atom.io/packages/autocomplete-swift)
+
+    - [SourceKittenDaemon](https://github.com/terhechte/SourceKittenDaemon) - This is a simple daemon that can read Xcode Swift projects and offers auto completion for Swift files and more over a built-in webserver. Effectively, this allows any kind of editor like Vim, Emacs, Sublime, or Atom to support Swift, Auto Completion, and Xcode projects.
+
 
 <a name="bash"></a>
 
@@ -1211,7 +1270,7 @@ These wrappers don’t include documentation, please check Apple’s documention
 [[ STRING1 =~ REGEXPRESSION ]] |	STRING1 matches Regular Expression
 
 \[[top](#top)]
-
+<a name="vim"></a>
 
 ### Vim Customization
 
@@ -1222,6 +1281,57 @@ These wrappers don’t include documentation, please check Apple’s documention
 
 - [Vim Adventures](https://vim-adventures.com)
 
+<a name="vscode"></a>
+
+### VSCode
+
+- [Docs](https://code.visualstudio.com/docs)
+
+#### Settings
+
+```css
+{
+    "window.zoomLevel": 0,
+    "editor.wordWrap": "bounded",
+    "workbench.editor.highlightModifiedTabs": true,
+    "editor.minimap.side": "left",
+    "workbench.colorTheme": "Dracula",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#e9497e77",
+        "editor.selectionHighlightBackground": "#e9497e77",
+        "editor.lineHighlightBorder": "#e9497e77",
+        "editor.lineHighlightBackground": "#e9497e77",
+        "editorBracketMatch.border": "#e9497ebd",
+        "minimap.selectionHighlight": "#e9497e77",
+        "editorCursor.foreground": "#e9497e",
+    },
+    "editor.fontSize": 9,
+    "editor.fontFamily": "Hack, Fira Code, Menlo, Consolas, DejaVu Sans Mono, monospace",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "python.formatting.provider": "black",
+    "python.linting.pydocstyleEnabled": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "atomKeymap.promptV3Features": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "bottom",
+    "files.trimTrailingWhitespace": true,
+    "search.showLineNumbers": true,
+    "editor.renderLineHighlight": "all",
+    "html.format.wrapLineLength": 79,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "editor.wordWrapColumn": 88,
+    "editor.rulers": [
+        88
+    ],
+    "editor.cursorStyle": "block",
+    "editor.cursorSurroundingLinesStyle": "all",
+    "editor.minimap.maxColumn": 50,
+}
+```
 
 <a name="atom"></a>
 
