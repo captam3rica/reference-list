@@ -262,6 +262,7 @@ recipes.
 	- /Library/LaunchDaemons         System-wide daemons provided by the administrator.
 	- /System/Library/LaunchAgents   Per-user agents provided by OS X.
 	- /System/Library/LaunchDaemons  System-wide daemons provided by OS X.
+
 - [Apple software Restore (ASR)](https://en.wikipedia.org/wiki/Apple_Software_Restore)
 - [Disabled Accounts](https://www.jamf.com/jamf-nation/discussions/18243/password-policy-profile-disables-user-account)
 - [Setting Printer Options Via CLI](http://www.brunerd.com/blog/2012/03/13/getting-and-setting-ppd-options-via-command-line-for-use-with-lpadmin-in-os-x/)
@@ -657,6 +658,186 @@ https://jamf.it/dep-debug
 - [Jamf Pro Security Overview](https://www.jamf.com/resources/product-documentation/jamf-pro-security-overview/)
 - [MacOS Security Checklist](https://resources.jamf.com/documents/products/documentation/macos-security-checklist.pdf)
 - [Startinstall Repo](https://github.com/jamf/erase-install-webinar/wiki)
+
+*Commands*
+
+- `sudo jamf help -hidden` - show the hidden commands
+
+    ```
+    sudo jamf help -hidden
+
+    Usage: jamf verb [options]
+
+	verb is one of the following:
+
+	canRunOnThisOSXVersion	 Prints YES if this version is compatible with this OSX version.
+	encryptDisk		 Activates disk encryption on this computer
+	fixPermissions		 Deprecated: You cannot execute the fixPermissions command on computers with macOS 10.12 or later.
+	launchAgent		 Sends events on a per user basis to the jamf daemon.
+	launchDaemon		 Performs actions in an ongoing daemon process.
+	listPrinters		 Lists all the installed printers.
+	logTesting		 
+	mdm			 Prepares the computer for use with MDM commands.
+	reenroll		 Shorcut for enroll -reenroll -archiveDeviceCertificate
+	removeMdmProfile	 Removes the JAMF MDM Profile
+	scheduledTask		 Create a JAMF scheduled task
+	trustJSS		 Adds a trust for the JAMF CA into the System keychain.
+	update			 Updates the jamf binary and related applications to the latest version from the JSS.
+
+
+
+	Global Flags:
+
+	-displayJSSTraffic 	 Displays the total network traffic between the jamf binary and the JSS
+	-randomDelaySeconds 	 Delays a random amount of time before starting
+				 Specify the maximum number of seconds as the next parameter
+	-verbose 		 Shows verbose events
+	-showPID 		 Prints the PID of the process
+
+
+
+	jamf help <verb> will provide details on that verb
+	```
+
+- `sudo jamf help`
+
+    ```
+    sudo jamf help -v    
+
+    Usage: jamf verb [options]
+
+	verb is one of the following:
+
+	about			 Displays information about the jamf binary
+	bind			 Binds this computer to a directory service
+	bless			 Blesses a System or a NetBoot Server
+	changePassword		 Changes a local user's password
+	checkJSSConnection	 Checks the availability of the JSS
+	createAccount		 Creates a new local account on the system
+	createConf		 Creates a configuration file that the jamf binary uses to find the JSS
+	createHooks		 Creates and configures login/logout hooks
+	createSetupDone		 Ensures the Setup Assistant does not launch immediately on the next boot
+	createStartupItem	 Creates a startup script to contact the JSS
+	deleteAccount		 Deletes a local account from NetInfo or the local dscl database
+	deletePrinter		 Deletes a printer from the system
+	deleteSetupDone		 Causes the Setup Assistant to launch on the next boot
+	displayMessage		 Displays a message to the current user
+	enablePermissions	 Enables permissions on a volume
+	enroll			 Enrolls this computer with the JSS
+	fixByHostFiles		 Fixes the ByHost files
+	fixDocks		 Repairs docks that have question marks after certain OS Updates
+	flushCaches		 Flush cache files for the system and/or users
+	flushPolicyHistory	 Flush the policy history on the JSS
+	getARDFields		 Displays the ARD Fields on a volume
+	getComputerName		 Displays the computer name on a volume
+	help			 Displays this message or details on a specific verb
+	install			 Installs a package
+	installAllCached	 Installs all packages that are cached
+	listUsers		 Lists all the users on the computer
+	log			 Log the IP address, action, and username to the JSS
+	manage			 Enforces the entire management framework from the JSS
+	mapPrinter		 Maps a printer
+	mcx			 Apply Managed Preferences
+	modifyDock		 Installs or removes items in all users docks
+	mount			 Mounts a file share
+	policy			 Checks for policies on the JSS
+	reboot			 Reboots the computer
+	recon			 Runs Recon to update the inventory in the JSS
+	removeFramework		 Removes the JAMF Binary and associated files from the computer.
+	removeSWUSettings	 Remove settings that point SWU at internal servers
+	resetPassword		 Resets a local user account password. (Warning: User keychain and FileVault 2 passwords may be affected. Use changePassword when current password is known)
+	runScript		 Runs a script
+	runSoftwareUpdate	 Run Software Update
+	setARDFields		 Sets the ARD Fields
+	setComputerName		 Sets the computer name
+	setHomePage		 Sets the default home page for users
+	setOFP			 Sets the Open Firmware mode and password
+	startSSH		 Starts the ssh server
+	uninstall		 Uninstalls a package
+	unmountServer		 Unmounts a file server
+	updatePrebindings	 Updates the prebindings on a volume
+	version			 Prints the version of this application
+
+
+
+	Global Flags:
+
+	-displayJSSTraffic 	 Displays the total network traffic between the jamf binary and the JSS
+	-randomDelaySeconds 	 Delays a random amount of time before starting
+				 Specify the maximum number of seconds as the next parameter
+	-verbose 		 Shows verbose events
+	-showPID 		 Prints the PID of the process
+
+
+
+	jamf help <verb> will provide details on that verb
+	```    
+
+- `sudo jamf help policy` - see additional info about a particular command.
+
+    ```
+    sudo jamf help policy
+    Password:
+
+    Usage:	 jamf policy [-event <event>] [-username <username>] [-id <policy_id>] [-forceNoRecon]
+
+	-event		The event or trigger that the policy is associated with in the JSS. Historical synonyms include –trigger and –action.
+				Note: Running policy without an event will default to the scheduled event.
+				Other events include: login, logout, startup, networkStateChange, enrollmentComplete, along with custom events.
+
+	-username		The username to check for policies for.
+
+	-id			The ID of the policy to be executed. Used by Casper Remote and Self Service.
+
+	-forceNoRecon		Prevents computers from submitting inventory update when a policy is configured to update inventory.
+
+    Return Codes: 
+	 0        The policy process finished with success.
+	 50       An unknown error occurred while running a policy.
+	 51       An error occurred because a policy is already being executed for this event.
+	 52       An error occurred while checking for policies.
+	 53       An error occurred while submitting the offline policy log to Jamf Pro.
+	 54       Policy execution needed to be restarted in the background because of the jamf binary update.
+	 55       An error occurred while submitting the Azure Active Directory ID information file.
+	 57       An error occurred while updating the jamf binary or Jamf apps.
+	 60       An error occurred while enforcing the management framework.
+	 300      An unknown error occurred while creating directory bindings.
+	 400      Disk encryption could not be executed because the jamf binary could not obtain a disk encryption ID from Jamf Pro.
+	 401      An error occurred while encrypting a disk.
+	 402      An error occurred while remediating a recovery key.
+	 440      An error occurred while mounting a distribution point.
+	 500      An unknown error occurred while modifying a dock item.
+	 501      An error occurred while modifying a dock item without contents.
+	 600      An error occurred while running an inventory update.
+	 700      An error occurred while manipulating a local account.
+	 750      An error occurred while resetting the managed account password.
+	 751      An error occurred while changing the managed account password.
+	 752      An error occurred while updating the managed account password in Jamf Pro.
+	 800      An error occurred because this computer does not meet the OS requirements for a package.
+	 801      An error occurred while installing a package.
+	 802      An error occurred while caching a package.
+	 803      An error occurred while installing a cached package.
+	 804      An error occurred while uninstalling a package.
+	 805      An error occurred while installing all of the cached packages.
+	 806      An error occurred while installing a patch package.
+	 900      An error occurred while installing or uninstalling a printer.
+	 911      An error occurred because the device URI was not provided.
+	 912      An error occurred because the printer name was not provided.
+	 913      An error occurred because the PPD file path is invalid.
+	 914      The printer cannot be installed because the computer does not meet the OS requirements for that printer.
+	 915      An error occurred while mapping a printer.
+	 921      An error occurred while uninstalling a printer.
+	 1001     An error occurred while setting an EFI password.
+	 1002     An error occurred while removing an EFI password.
+	 2100     An error occurred while saving an embedded script to the disk.
+	 2101     An error occurred while executing a script.
+	 2103     An error occurred because this computer does not meet the OS requirements for the script.
+	 2200     An error occurred while installing software updates.
+	 2201     An error occurred while installing software updates. There may be a proxy in place.
+	 2202     An error occurred while adding a software update server.
+	 2300     An error occurred while running Microsoft Device Registration.
+	 2301     An error occurred because Microsoft Device Registration can only register computers when they are connected to the network.
+    ```
 
 *Errors*
 
@@ -1076,7 +1257,11 @@ The command to collect the logs from a remote machine is:
 	- vRealize
 
 	`cat server_cert.cer key_filename.key cacerts.cer > multi_part.pem`
-	
+
+- Convert .cer to .pem
+
+    `openssl x509 -in /path/to/in_file.cer -out /path/to/out_file.pem`
+
 - [Convert P7B to PFX with OpenSSL](https://www.lisenet.com/2014/convert-p7b-to-pfx-with-openssl/) - If you need to convert from P7B to PFX make sure that you have both the certificate and the private key handy for this command sequence.
 
 - DigiCert
