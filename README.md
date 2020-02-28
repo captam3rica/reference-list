@@ -58,7 +58,8 @@ Referenced often, Updated simi-regularly :)
     1. [Python](#python)
     1. [Swift](#swift_code)
     1. [Bash](#bash)
-    1. Vim
+    1. [Vim](#vim)
+    2. [VSCode](#vscode)
     1. [Atom](#atom)
     1. [Markdown](#markdown)
     2. RegEx
@@ -101,6 +102,8 @@ recipes.
     what is happening during DEP enrollment on the Mac.
 
     - [cannonball](http://cannonball.tombridge.com/2017/04/27/getting-started-with-installapplication-depnotify-and-simplemdm/)
+
+- [mac-ibm-enrollment-app](https://github.com/IBM/mac-ibm-enrollment-app) - The Mac@IBM enrollment app makes setting up macOS with Jamf Pro more intuitive for users and easier for IT. The application offers IT admins the ability to gather additional information about their users during setup, allows users to customize their enrollment by selecting apps or bundles of apps to install during setup, and provides users with next steps when enrollment is complete.
 
 - [SplashBuddy](https://github.com/Shufflepuck/SplashBuddy) - SplashBuddy goal is to provide an elegant and secure onboarding process for Mac users using DEP.
 - [ManagedMac](http://dayglojesus.github.io/managedmac/) - puppet plugin for managing mac.
@@ -231,6 +234,8 @@ recipes.
 - [HT201260 - macOS Builds](https://support.apple.com/en-us/HT201260)
 - [HT201255 - Mac Startup Cmd Options](https://support.apple.com/en-us/HT201255)
 - [HT201853 - Apple Video Adapters and Cables](https://support.apple.com/en-us/HT201853 "About Apple Video Adapters and Cables")
+- [HT208987 - About Activation Lock on your Mac](https://support.apple.com/en-us/HT208987)
+    - [Activation Lock](https://support.apple.com/guide/mdm/activation-lock-apd593fdd1c9/web)
 
 
 #### White Papers
@@ -257,6 +262,7 @@ recipes.
 	- /Library/LaunchDaemons         System-wide daemons provided by the administrator.
 	- /System/Library/LaunchAgents   Per-user agents provided by OS X.
 	- /System/Library/LaunchDaemons  System-wide daemons provided by OS X.
+
 - [Apple software Restore (ASR)](https://en.wikipedia.org/wiki/Apple_Software_Restore)
 - [Disabled Accounts](https://www.jamf.com/jamf-nation/discussions/18243/password-policy-profile-disables-user-account)
 - [Setting Printer Options Via CLI](http://www.brunerd.com/blog/2012/03/13/getting-and-setting-ppd-options-via-command-line-for-use-with-lpadmin-in-os-x/)
@@ -269,6 +275,15 @@ recipes.
 - [Apple Profile Manager](http://help.apple.com/profilemanager/mac/5.4/#/apd5BD57F16-A2BF-43B9-AB4B-24948FB52C1E)
 - [Apple Configurator 2](http://help.apple.com/configurator/mac/2.0/)
 - [MacOS Deployment Reference](https://help.apple.com/deployment/macos/#/ior5d40635d0)
+
+
+### Apple Business Manager
+
+- [What are Managed Apple IDs in Apple Business Manager?](https://support.apple.com/guide/apple-business-manager/what-are-managed-apple-ids-tes78b477c81/1/web/1)
+- [Create Managed Apple IDs in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/create-managed-apple-ids-mdm1c9622977/web)
+- [Configure federated authentication with Microsoft Azure AD for Apple Business Manager](https://support.apple.com/guide/apple-business-manager/configure-federated-authentication-microsoft-apdc9611d0e0/1/web/1#apddc46155ee)
+- [Add federated domains in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/add-federated-domains-apdf867462bc/1/web/1)
+- [Intro to federated authentication with Apple Business Manager](https://support.apple.com/guide/apple-business-manager/intro-to-federated-authentication-apdb19317543/1/web/1)
 
 
 <a name="macos_network_and_wifi"></a>
@@ -286,19 +301,30 @@ recipes.
 
 ### Security
 
-- [NIST - Apple Security](https://github.com/usnistgov/applesec)
+- [Apple Platform Security - 2019](https://manuals.info.apple.com/MANUALS/1000/MA1902/en_US/apple-platform-security-guide.pdf)
+- [App security overview](https://support.apple.com/guide/security/app-security-overview-sec35dd877d0/1/web/1)
+- [Product security certifications, validations, and guidance for SEP: Secure Key Store](https://support.apple.com/en-us/HT209632)
+- [NIST - Apple Security](https://github.com/usnistgov/applesec)  
 
     This page contains supplemental resources to NIST Special Publication (SP) 800-179 Revision 1, Guide to Securing macOS 10.12 Systems for IT Professionals: A NIST Security Configuration Checklist. The publication is located at https://csrc.nist.gov/publications/detail/sp/800-179/rev-1/draft.
 Please send any comments to 800-179comments@nist.gov.
 
 - [CIS Benchmark - Apple](https://www.cisecurity.org/benchmark/apple_os/)
 - [Sudoers Modification](https://derflounder.wordpress.com/2016/07/11/editing-etcsudoers-to-manage-sudo-rights-for-users-and-groups/)
+
 - PPPC
+
 	- [Derflounder](https://derflounder.wordpress.com/2018/08/31/creating-privacy-preferences-policy-control-profiles-for-macos/)
+
 - Approving KEXTs
+
 	- [Derflounder](https://derflounder.wordpress.com/2018/04/12/whitelisting-third-party-kernel-extensions-using-profiles/)
 	- [Vendor KEXT Info](https://docs.google.com/spreadsheets/d/1IWrbE8xiau4rU2mtXYji9vSPWDqb56luh0OhD5XS0AM/edit#gid=0)
+
+- SysEXT
+
 - [Making Changes to the authorizationdb](https://derflounder.wordpress.com/2014/02/16/managing-the-authorization-database-in-os-x-mavericks/) 
+
 	- `security authorizationdb read <system.preferences.[preferencez_setting_name>`
 	- `security authorizationdb read referenced.rights > /path/to/filename.plist`
 	- `security authorizationdb write system.preferences allow`
@@ -307,8 +333,8 @@ Please send any comments to 800-179comments@nist.gov.
 - The `security` command
 
 	- Find a specific keychain item by name
-
 		`security find-generic-password -l Hermes`
+
 
 <a name="macos_encryption_and_fv"></a>
 
@@ -578,15 +604,18 @@ https://jamf.it/dep-debug
 - [JamfCloud IP Addresses](https://www.jamf.com/jamf-nation/articles/409/permitting-inbound-outbound-traffic-with-jamf-cloud)
 
 
-*Infrastructure*
+*LDAP Integration*
 
 - [JIM Install Guide](http://docs.jamf.com/infrastructure-manager/1.3.2/Installing_a_Jamf_Infrastructure_Manager_Instance.html)
-    
     - [JIM Multi-site](https://github.com/jamf/Multi-JIM/blob/master/Multi-Instance%20JIM-Install.sh)
-    
-- [AzureAD LDAPS](https://www.jamf.com/jamf-nation/discussions/25876/a-guide-to-jss-azure-ad-integration-ldap-+-sso)
-- [AzureAD Integration](https://marketplace.jamf.com/details/azure-active-directory/)
+- [AzureAD LDAPS](https://www.jamf.com/jamf-nation/discussions/25876/a-guide-to-jss-azure-ad-integration-ldap-+-sso)    
+    - [MSFT Doc: LDAPS Integration](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-configure-ldaps)
+    - [MSFT Doc: Create and Configure an AD DS Instance](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance)
+    - [HCS: Integrating Jamf with Azure AD LDAPS](https://hcsonline.com/support/white-papers/a-guide-to-identity-management-with-azure-active-directory-jamf-pro)
 - [Okta LDAP Integration](https://travellingtechguy.eu/integrating-okta-ldap-in-jamf-pro/)
+
+*Certificate Services Integration*
+
 - [Jamf ADCS Connector](https://docs.jamf.com/ad-cs-connector/1.0.0/Jamf_AD_CS_Connector_Overview.html)
 
 
@@ -605,7 +634,7 @@ https://jamf.it/dep-debug
 *Conditional Access*
 
 - [Intune Integration - Traveling Tech Guy](https://travellingtechguy.eu/jamf-pro-and-ms-azure-intune-for-macos/)
-- [Jamf Pro Admin Guide - 10.15 - Intune integration](https://docs.jamf.com/10.15.0/jamf-pro/administrator-guide/Integrating_with_Microsoft_Intune.html)
+- [Integrating with Microsoft Intune to Enforce Compliance on Mac Computers Managed by Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/microsoft-intune/10.17.0/Introduction.html)
 - [Conditional Access with Azure](https://resources.jamf.com/documents/white-papers/conditional-access-going-beyond-perimeter-based-security.pdf)
 
 
@@ -622,13 +651,193 @@ https://jamf.it/dep-debug
 *Extension Attributes*
 
 - [Jamf GitHub Extension Attributes Repo](https://github.com/jamf/Jamf-Nation-Extension-Attributes)
-*Misc Documentation*
 
+*Misc Documentation*
 
 - [All Product Documentation](https://www.jamf.com/resources/product-documentation/)
 - [Jamf Pro Security Overview](https://www.jamf.com/resources/product-documentation/jamf-pro-security-overview/)
 - [MacOS Security Checklist](https://resources.jamf.com/documents/products/documentation/macos-security-checklist.pdf)
 - [Startinstall Repo](https://github.com/jamf/erase-install-webinar/wiki)
+
+*Commands*
+
+- `sudo jamf help -hidden` - show the hidden commands
+
+    ```
+    sudo jamf help -hidden
+
+    Usage: jamf verb [options]
+
+	verb is one of the following:
+
+	canRunOnThisOSXVersion	 Prints YES if this version is compatible with this OSX version.
+	encryptDisk		 Activates disk encryption on this computer
+	fixPermissions		 Deprecated: You cannot execute the fixPermissions command on computers with macOS 10.12 or later.
+	launchAgent		 Sends events on a per user basis to the jamf daemon.
+	launchDaemon		 Performs actions in an ongoing daemon process.
+	listPrinters		 Lists all the installed printers.
+	logTesting		 
+	mdm			 Prepares the computer for use with MDM commands.
+	reenroll		 Shorcut for enroll -reenroll -archiveDeviceCertificate
+	removeMdmProfile	 Removes the JAMF MDM Profile
+	scheduledTask		 Create a JAMF scheduled task
+	trustJSS		 Adds a trust for the JAMF CA into the System keychain.
+	update			 Updates the jamf binary and related applications to the latest version from the JSS.
+
+
+
+	Global Flags:
+
+	-displayJSSTraffic 	 Displays the total network traffic between the jamf binary and the JSS
+	-randomDelaySeconds 	 Delays a random amount of time before starting
+				 Specify the maximum number of seconds as the next parameter
+	-verbose 		 Shows verbose events
+	-showPID 		 Prints the PID of the process
+
+
+
+	jamf help <verb> will provide details on that verb
+	```
+
+- `sudo jamf help`
+
+    ```
+    sudo jamf help -v    
+
+    Usage: jamf verb [options]
+
+	verb is one of the following:
+
+	about			 Displays information about the jamf binary
+	bind			 Binds this computer to a directory service
+	bless			 Blesses a System or a NetBoot Server
+	changePassword		 Changes a local user's password
+	checkJSSConnection	 Checks the availability of the JSS
+	createAccount		 Creates a new local account on the system
+	createConf		 Creates a configuration file that the jamf binary uses to find the JSS
+	createHooks		 Creates and configures login/logout hooks
+	createSetupDone		 Ensures the Setup Assistant does not launch immediately on the next boot
+	createStartupItem	 Creates a startup script to contact the JSS
+	deleteAccount		 Deletes a local account from NetInfo or the local dscl database
+	deletePrinter		 Deletes a printer from the system
+	deleteSetupDone		 Causes the Setup Assistant to launch on the next boot
+	displayMessage		 Displays a message to the current user
+	enablePermissions	 Enables permissions on a volume
+	enroll			 Enrolls this computer with the JSS
+	fixByHostFiles		 Fixes the ByHost files
+	fixDocks		 Repairs docks that have question marks after certain OS Updates
+	flushCaches		 Flush cache files for the system and/or users
+	flushPolicyHistory	 Flush the policy history on the JSS
+	getARDFields		 Displays the ARD Fields on a volume
+	getComputerName		 Displays the computer name on a volume
+	help			 Displays this message or details on a specific verb
+	install			 Installs a package
+	installAllCached	 Installs all packages that are cached
+	listUsers		 Lists all the users on the computer
+	log			 Log the IP address, action, and username to the JSS
+	manage			 Enforces the entire management framework from the JSS
+	mapPrinter		 Maps a printer
+	mcx			 Apply Managed Preferences
+	modifyDock		 Installs or removes items in all users docks
+	mount			 Mounts a file share
+	policy			 Checks for policies on the JSS
+	reboot			 Reboots the computer
+	recon			 Runs Recon to update the inventory in the JSS
+	removeFramework		 Removes the JAMF Binary and associated files from the computer.
+	removeSWUSettings	 Remove settings that point SWU at internal servers
+	resetPassword		 Resets a local user account password. (Warning: User keychain and FileVault 2 passwords may be affected. Use changePassword when current password is known)
+	runScript		 Runs a script
+	runSoftwareUpdate	 Run Software Update
+	setARDFields		 Sets the ARD Fields
+	setComputerName		 Sets the computer name
+	setHomePage		 Sets the default home page for users
+	setOFP			 Sets the Open Firmware mode and password
+	startSSH		 Starts the ssh server
+	uninstall		 Uninstalls a package
+	unmountServer		 Unmounts a file server
+	updatePrebindings	 Updates the prebindings on a volume
+	version			 Prints the version of this application
+
+
+
+	Global Flags:
+
+	-displayJSSTraffic 	 Displays the total network traffic between the jamf binary and the JSS
+	-randomDelaySeconds 	 Delays a random amount of time before starting
+				 Specify the maximum number of seconds as the next parameter
+	-verbose 		 Shows verbose events
+	-showPID 		 Prints the PID of the process
+
+
+
+	jamf help <verb> will provide details on that verb
+	```    
+
+- `sudo jamf help policy` - see additional info about a particular command.
+
+    ```
+    sudo jamf help policy
+    Password:
+
+    Usage:	 jamf policy [-event <event>] [-username <username>] [-id <policy_id>] [-forceNoRecon]
+
+	-event		The event or trigger that the policy is associated with in the JSS. Historical synonyms include –trigger and –action.
+				Note: Running policy without an event will default to the scheduled event.
+				Other events include: login, logout, startup, networkStateChange, enrollmentComplete, along with custom events.
+
+	-username		The username to check for policies for.
+
+	-id			The ID of the policy to be executed. Used by Casper Remote and Self Service.
+
+	-forceNoRecon		Prevents computers from submitting inventory update when a policy is configured to update inventory.
+
+    Return Codes: 
+	 0        The policy process finished with success.
+	 50       An unknown error occurred while running a policy.
+	 51       An error occurred because a policy is already being executed for this event.
+	 52       An error occurred while checking for policies.
+	 53       An error occurred while submitting the offline policy log to Jamf Pro.
+	 54       Policy execution needed to be restarted in the background because of the jamf binary update.
+	 55       An error occurred while submitting the Azure Active Directory ID information file.
+	 57       An error occurred while updating the jamf binary or Jamf apps.
+	 60       An error occurred while enforcing the management framework.
+	 300      An unknown error occurred while creating directory bindings.
+	 400      Disk encryption could not be executed because the jamf binary could not obtain a disk encryption ID from Jamf Pro.
+	 401      An error occurred while encrypting a disk.
+	 402      An error occurred while remediating a recovery key.
+	 440      An error occurred while mounting a distribution point.
+	 500      An unknown error occurred while modifying a dock item.
+	 501      An error occurred while modifying a dock item without contents.
+	 600      An error occurred while running an inventory update.
+	 700      An error occurred while manipulating a local account.
+	 750      An error occurred while resetting the managed account password.
+	 751      An error occurred while changing the managed account password.
+	 752      An error occurred while updating the managed account password in Jamf Pro.
+	 800      An error occurred because this computer does not meet the OS requirements for a package.
+	 801      An error occurred while installing a package.
+	 802      An error occurred while caching a package.
+	 803      An error occurred while installing a cached package.
+	 804      An error occurred while uninstalling a package.
+	 805      An error occurred while installing all of the cached packages.
+	 806      An error occurred while installing a patch package.
+	 900      An error occurred while installing or uninstalling a printer.
+	 911      An error occurred because the device URI was not provided.
+	 912      An error occurred because the printer name was not provided.
+	 913      An error occurred because the PPD file path is invalid.
+	 914      The printer cannot be installed because the computer does not meet the OS requirements for that printer.
+	 915      An error occurred while mapping a printer.
+	 921      An error occurred while uninstalling a printer.
+	 1001     An error occurred while setting an EFI password.
+	 1002     An error occurred while removing an EFI password.
+	 2100     An error occurred while saving an embedded script to the disk.
+	 2101     An error occurred while executing a script.
+	 2103     An error occurred because this computer does not meet the OS requirements for the script.
+	 2200     An error occurred while installing software updates.
+	 2201     An error occurred while installing software updates. There may be a proxy in place.
+	 2202     An error occurred while adding a software update server.
+	 2300     An error occurred while running Microsoft Device Registration.
+	 2301     An error occurred because Microsoft Device Registration can only register computers when they are connected to the network.
+    ```
 
 *Errors*
 
@@ -644,16 +853,29 @@ https://jamf.it/dep-debug
 #### Tools
 
 - Jamf Protect
-	- [Product Page](https://www.jamf.com/products/jamf-protect/)
-	- [Admin Guide](https://docs.jamf.com/jamf-protect/administrator-guide/Preface.html)
+    
+    - [YouTube: Introduction to Protect](https://www.youtube.com/watch?v=gsbfkCSjwxc&t=1s)`
+    - [Product Page](https://www.jamf.com/products/jamf-protect/)
+    - [Admin Guide](https://docs.jamf.com/jamf-protect/administrator-guide/Preface.html)
+    - [Evaluation Guide]( https://docs.jamf.com/jamf-protect/evaluation-guide/Overview.html)
+
 - [GitHub](https://github.com/jamf)
+
 	- [DEPNotify-Starter](https://github.com/jamf/DEPNotify-Starter)
-- [Jamf Connect](https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/)
+
+- Jamf Connect
+
+    - [Admin Guide](https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/)
+    - [Using FileVault with Jamf Connect Login](https://www.jamf.com/jamf-nation/articles/682/using-filevault-with-jamf-connect)
+    - [Understanding Jamf Connect with OpenID Connect Authentication](https://www.jamf.com/jamf-nation/articles/696/understanding-jamf-connect-with-openid-connect-authentication)
+    - [Configuring Jamf Connect with Azure AD Hybrid Identity Solutions](https://www.jamf.com/jamf-nation/articles/697/configuring-jamf-connect-with-azure-ad-hybrid-identity-solutions)
+
 	- Licensing
 		- Jamf Connect Verify preferences
 		- A .jamfconnectlicense file in /Library/Application Support/com.jamf.connect.verify
 		- A .jamfconnectlicense file in ~/Library/Application Support/com.jamf.connect.verify
 		- Note: To store the license in the preferences configuration profile, you must convert the license file to base64 format, and then use the LicenseFile key in your configuration profile.
+
 - [NoMAD Helper](https://www.youtube.com/watch?v=fQ4Epy1J7ZU)
 - [Composer User Guide](https://www.jamf.com/resources/product-documentation/composer-user-guide/)
 
@@ -683,11 +905,11 @@ https://jamf.it/dep-debug
 - [Workspace ONE UEM Docs](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1907/rn/VMware-Workspace-ONE-UEM-Release-Notes-1907.html)
 - [Device Profiles](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1908/iOS_Platform/GUID-AWT-IOS-PROFILE-OVERVIEW.html)
 	- [Windows](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/1908/Windows_Desktop_Device_Management/GUID-AWT-PROFILE-OVERVIEWWD.html)
+- [Console Administrator Password Policies for Shared SaaS Environments (50122050)](https://kb.vmware.com/s/article/50122050)
 
 
 #### Secure Email Gateway
 
-- [Communications Flow, EAS with SEG](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/9.5/vmware-airwatch-guides-95/GUID-AW95-CommunicationFlow.html)
 - KCD
 
 	- [MIT Kerberos Documentation](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html)
@@ -699,6 +921,7 @@ https://jamf.it/dep-debug
 	- [Yet another common kerberos errors doc](https://pvtl.force.com/s/article/common-errors-and-resolutions)
 	- [Table of Kerberos v5 Status Codes](https://docs.oracle.com/cd/E19683-01/816-1331/kerberrs-1/index.html)
 	- [Troubleshooting Kerberos](https://docs.oracle.com/cd/E19253-01/816-4557/trouble-5/index.html)
+	- [413 Error from Exchange](https://stackoverflow.com/questions/15300064/getting-413-errors-on-iis-with-concurrent-sessions-using-the-same-https-client-c)
 
 #### Tools
 
@@ -1034,7 +1257,11 @@ The command to collect the logs from a remote machine is:
 	- vRealize
 
 	`cat server_cert.cer key_filename.key cacerts.cer > multi_part.pem`
-	
+
+- Convert .cer to .pem
+
+    `openssl x509 -in /path/to/in_file.cer -out /path/to/out_file.pem`
+
 - [Convert P7B to PFX with OpenSSL](https://www.lisenet.com/2014/convert-p7b-to-pfx-with-openssl/) - If you need to convert from P7B to PFX make sure that you have both the certificate and the private key handy for this command sequence.
 
 - DigiCert
@@ -1051,7 +1278,7 @@ The command to collect the logs from a remote machine is:
 \[[top](#top)]
 <a name="scripting-and-languages"></a>
 
-## Related to Scripting & Development
+## Scripting & Development
 
 - [HTTPS Status Code Explanations](https://httpstatuses.com/)
 - [shields.io](https://shields.io)
@@ -1113,9 +1340,7 @@ The Mac does not have the necessary developer tools installed.
 
 <a name="python"></a>
 
-### Python
-
-![](Screenshots/Python/python-icon.png)
+### ![](Screenshots/Python/python-icon.png) Python
 
 -	Install `pip` python package manager MacOS - **P**ip **I**nstalls **P**ackages
 	- `sudo easy_install pip`
@@ -1131,9 +1356,15 @@ The Mac does not have the necessary developer tools installed.
 - [Send emails](https://realpython.com/python-send-email/)
 - [RealPython.com](https://realpython.com)
 
+*PEPs*
+
+- [PEP0440: Version Identification and Dependency Specification](https://www.python.org/dev/peps/pep-0440/)
+
 *Learning Sites*
 
 - [CheckIO](https://checkio.org)
+- [Real Python: fstrings](https://realpython.com/python-f-strings/)
+- [Real Python: Python String Formatting Best Practices](https://realpython.com/python-string-formatting/)
 
 *Modules*
 
@@ -1146,13 +1377,26 @@ These wrappers don’t include documentation, please check Apple’s documention
 
 <a name="swift_code"></a>
 
-### Swift
-
-![](Screenshots/Swift/swift_icon.png)
+### ![](Screenshots/Swift/swift_icon.png) Swift
 
 #### Code Docs
 
 - [Updating and Deleting Keychain Items](https://developer.apple.com/documentation/security/keychain_services/keychain_items/updating_and_deleting_keychain_items)
+
+#### Swift Packages for Atom
+
+- [SwiftLint](https://realm.github.io/SwiftLint/) - A tool to enforce Swift style and conventions, loosely based on GitHub’s Swift Style Guide.
+
+    `brew install swiftlint`
+    
+- [linter-swiftlint](https://atom.io/packages/linter-swiftlint) - This linter plugin for Linter provides an interface to SwiftLint's styling advice. Used with files that have the Swift syntax.
+
+- [language-swift](https://atom.io/packages/language-swift) - Swift language support for Atom.
+
+- [autocomplete-swift](https://atom.io/packages/autocomplete-swift)
+
+    - [SourceKittenDaemon](https://github.com/terhechte/SourceKittenDaemon) - This is a simple daemon that can read Xcode Swift projects and offers auto completion for Swift files and more over a built-in webserver. Effectively, this allows any kind of editor like Vim, Emacs, Sublime, or Atom to support Swift, Auto Completion, and Xcode projects.
+
 
 <a name="bash"></a>
 
@@ -1211,7 +1455,7 @@ These wrappers don’t include documentation, please check Apple’s documention
 [[ STRING1 =~ REGEXPRESSION ]] |	STRING1 matches Regular Expression
 
 \[[top](#top)]
-
+<a name="vim"></a>
 
 ### Vim Customization
 
@@ -1222,6 +1466,57 @@ These wrappers don’t include documentation, please check Apple’s documention
 
 - [Vim Adventures](https://vim-adventures.com)
 
+<a name="vscode"></a>
+
+### VSCode
+
+- [Docs](https://code.visualstudio.com/docs)
+
+#### Settings
+
+```css
+{
+    "window.zoomLevel": 0,
+    "editor.wordWrap": "bounded",
+    "workbench.editor.highlightModifiedTabs": true,
+    "editor.minimap.side": "left",
+    "workbench.colorTheme": "Dracula",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#e9497e77",
+        "editor.selectionHighlightBackground": "#e9497e77",
+        "editor.lineHighlightBorder": "#e9497e77",
+        "editor.lineHighlightBackground": "#e9497e77",
+        "editorBracketMatch.border": "#e9497ebd",
+        "minimap.selectionHighlight": "#e9497e77",
+        "editorCursor.foreground": "#e9497e",
+    },
+    "editor.fontSize": 9,
+    "editor.fontFamily": "Hack, Fira Code, Menlo, Consolas, DejaVu Sans Mono, monospace",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "python.formatting.provider": "black",
+    "python.linting.pydocstyleEnabled": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "atomKeymap.promptV3Features": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.snippetSuggestions": "bottom",
+    "files.trimTrailingWhitespace": true,
+    "search.showLineNumbers": true,
+    "editor.renderLineHighlight": "all",
+    "html.format.wrapLineLength": 79,
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "editor.wordWrapColumn": 88,
+    "editor.rulers": [
+        88
+    ],
+    "editor.cursorStyle": "block",
+    "editor.cursorSurroundingLinesStyle": "all",
+    "editor.minimap.maxColumn": 50,
+}
+```
 
 <a name="atom"></a>
 
