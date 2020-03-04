@@ -31,6 +31,7 @@ Referenced often, Updated simi-regularly :)
     5. SCCM Administration
     6. Image Creation
     7. Handy Commands
+    8. [Reset IE Settings](#reset_ie_settings)
     8. Error Codes
 
 1. [MDM](#mdm)
@@ -515,6 +516,20 @@ Please send any comments to 800-179comments@nist.gov.
 	1. Click the "Next" button
 	1. Click the "Finish" button
 
+<a name="reset_ie_settings"></a>
+
+### Reset Internet Explorer
+
+If IE security settings are blocking you from downloading a file use the following steps to reset the security settings.
+
+1. Open Control Panel
+2. Select **Networking**
+3. Under **Internet Options** click **Manage Browser Add-ons**. This will bring up Internet Properties.
+4. Select the **Security** tab and click **Reset all zones to default** and follow any prompts should they appear.
+5. Select the **Advanced** tab and click the **Reset** button. A dialogue may come up asking to close all applications.
+6. Open **Task Manager** and clock any of the Internet Explorer processes.
+7. Close the Task Manager.
+8. Go back to the **Internet Properties** window and reset the defaults again and do the same on the Advanced tab again.
 
 
 ### Error Codes
@@ -596,6 +611,7 @@ https://jamf.it/dep-debug
 *Maintenance URLs*
 
 - [Service Status](status.jamf.com)
+- [Jamf Pro Known Issues](https://www.jamf.com/jamf-nation/my/products/jamf-pro/known-issues)
 
 
 *Network Information*
