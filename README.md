@@ -132,6 +132,7 @@ recipes.
 - [http://www.getmacapps.com](http://www.getmacapps.com)
 - [macadmins.software](macadmins.software)
 - [https://derflounder.wordpress.com](https://derflounder.wordpress.com)
+- [iOS Release Versions](https://en.wikipedia.org/wiki/IOS_version_history)
     
 
 <a name="macos_commands"></a>
@@ -610,7 +611,7 @@ https://jamf.it/dep-debug
 
 *Maintenance URLs*
 
-- [Service Status](status.jamf.com)
+- [Service Status](https://status.jamf.com)
 - [Jamf Pro Known Issues](https://www.jamf.com/jamf-nation/my/products/jamf-pro/known-issues)
 
 
@@ -649,9 +650,14 @@ https://jamf.it/dep-debug
 
 *Conditional Access*
 
+- [Conditional Access and Why it Matters](https://www.jamf.com/products/jamf-pro/microsoft/)
 - [Intune Integration - Traveling Tech Guy](https://travellingtechguy.eu/jamf-pro-and-ms-azure-intune-for-macos/)
 - [Integrating with Microsoft Intune to Enforce Compliance on Mac Computers Managed by Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/microsoft-intune/10.17.0/Introduction.html)
 - [Conditional Access with Azure](https://resources.jamf.com/documents/white-papers/conditional-access-going-beyond-perimeter-based-security.pdf)
+- [MSFT Doc: Enforcing Conditional Access](https://docs.microsoft.com/en-us/mem/intune/protect/conditional-access-assign-jamf)
+- Only applies to AAD User groups
+- [MSFT Doc: Troubleshooting](https://docs.microsoft.com/en-us/mem/intune/protect/troubleshoot-jamf)
+
 
 
 *SCEP Proxy Configuration*
@@ -883,6 +889,7 @@ https://jamf.it/dep-debug
 
     - [Admin Guide](https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/)
     - [Using FileVault with Jamf Connect Login](https://www.jamf.com/jamf-nation/articles/682/using-filevault-with-jamf-connect)
+    - [Understanding Jamf Connect Authentication with Azure AD Hybrid Identity Solutions](https://www.jamf.com/jamf-nation/articles/702/understanding-jamf-connect-authentication-with-azure-ad-hybrid-identity-solutions)
     - [Understanding Jamf Connect with OpenID Connect Authentication](https://www.jamf.com/jamf-nation/articles/696/understanding-jamf-connect-with-openid-connect-authentication)
     - [Configuring Jamf Connect with Azure AD Hybrid Identity Solutions](https://www.jamf.com/jamf-nation/articles/697/configuring-jamf-connect-with-azure-ad-hybrid-identity-solutions)
 
@@ -1710,6 +1717,19 @@ atom-text-editor.editor .selection .region {
     -   Experimental QUIC (Similar to TCP but over UDP): Enabled
 
 [[top](#top)]
+
+
+## Networking
+
+### Wireshark
+
+#### Commands
+
+- Find partial IP address
+
+    `ip.host matches "\.1\.62$"`  
+    `ip.src_host matches "\.1\.62$"`  
+    `uo.dst_host matches "\.1\.62$"`  
 
 
 ## Security
