@@ -18,6 +18,7 @@ Referenced often, Updated simi-regularly :)
 	5. [Networking & Wi-Fi](#macos_network_and_wifi)
 	6. [Security](#macos_security)
 	7. [Encryption & FileVault](#macos_encryption_and_fv)
+	8. [Application Deployment](#apple_app_deployment)
 	8. [Apple Device Automation](#apple_device_automation)
 	9. [Support](#apple_support)
 
@@ -230,6 +231,8 @@ recipes.
 
 ### Documentation
 
+- [Developer Documentation](https://developer.apple.com/documentation)
+
 #### Apple KBs
 
 - [HT201407 - If you can't activate your iPhone](https://support.apple.com/en-us/HT201407)
@@ -357,6 +360,12 @@ Please send any comments to 800-179comments@nist.gov.
 
 - [Manage FileVault with `fdesetup`](https://derflounder.wordpress.com/2015/12/20/managing-el-capitans-filevault-2-with-fdesetup/)
 - [FileVault Institutional Recovery Keys - DerFlounder](https://derflounder.wordpress.com/2014/08/13/filevault-2-institutional-recovery-keys-creation-deployment-and-use/)
+
+<a name="apple_app_deployment"></a>
+
+### Application Deployment
+
+- [Firefox Preferences](https://github.com/mozilla/policy-templates/blob/a46ede82219f2cf58364c13fb434e30670dcd257/README.md)
 
 
 <a name="apple_device_automation"></a>
