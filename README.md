@@ -366,6 +366,7 @@ Please send any comments to 800-179comments@nist.gov.
 ### Application Deployment
 
 - [Firefox Preferences](https://github.com/mozilla/policy-templates/blob/a46ede82219f2cf58364c13fb434e30670dcd257/README.md)
+- [Symantec Endpoint Protection client Mac compatibility](https://knowledge.broadcom.com/external/article/152316/mac-compatibility-with-the-endpoint-prot.html)
 
 
 <a name="apple_device_automation"></a>
