@@ -29,6 +29,7 @@ Referenced often, Updated simi-regularly :)
     2. MSFT Office
     3. Active Directory/AzureAD/LDAP
     4. OIDC & Microsoft Identity Platform
+    5. [Conditional Access with Intune](#msft_conditional_access)
     5. SCCM Administration
     6. Image Creation
     7. Handy Commands
@@ -39,6 +40,7 @@ Referenced often, Updated simi-regularly :)
 
 	1. [Apple](#mdm_apple_apns)
 	1. [Jamf](#mdm_jamf)
+	2. [Addigy](#mdm_addigy)
 	2. [WorkspaceONE](#mdm_wso)
 	3. [MSFT Device Manager](#mdm_msft_device_manager)
 	3. [Mobile Iron](#mdm_mobile_iron)
@@ -92,7 +94,8 @@ Referenced often, Updated simi-regularly :)
 
 - [AutoPkg](https://autopkg.github.io/autopkg/) - AutoPkg is a system for automatically preparing software for distribution to managed clients. Recipes allow you to specify a series of simple actions which combined together can perform complex tasks, similar to Automator workflows or Unix pipes.
 
-	- [recipe-robot](https://github.com/homebysix/recipe-robot): help create AutoPkg 
+    - [GitHub Repo](https://github.com/autopkg/autopkg) 
+    - [recipe-robot](https://github.com/homebysix/recipe-robot): help create AutoPkg 
 recipes.
 
 - [Suspicious Package](http://www.mothersruin.com/software/SuspiciousPackage/get.html): look inside of packages. 
@@ -494,7 +497,14 @@ Please send any comments to 800-179comments@nist.gov.
 - [Microsoft identity platform and OpenID Connect protocol](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-protocols-oidc)
 
 
-\[[top](#top)]
+<a name="msft_conditional_access"></a>
+
+### Conditional Access
+
+- [MSFT Doc: Enforcing Conditional Access](https://docs.microsoft.com/en-us/mem/intune/protect/conditional-access-assign-jamf)
+- Only applies to AAD User groups
+- [MSFT Doc: Troubleshooting](https://docs.microsoft.com/en-us/mem/intune/protect/troubleshoot-jamf)
+
 
 ### SCCM Administration
 
@@ -685,11 +695,9 @@ https://jamf.it/dep-debug
 
 - [Conditional Access and Why it Matters](https://www.jamf.com/products/jamf-pro/microsoft/)
 - [Intune Integration - Traveling Tech Guy](https://travellingtechguy.eu/jamf-pro-and-ms-azure-intune-for-macos/)
-- [Integrating with Microsoft Intune to Enforce Compliance on Mac Computers Managed by Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/microsoft-intune/10.17.0/Introduction.html)
-- [Conditional Access with Azure](https://resources.jamf.com/documents/white-papers/conditional-access-going-beyond-perimeter-based-security.pdf)
-- [MSFT Doc: Enforcing Conditional Access](https://docs.microsoft.com/en-us/mem/intune/protect/conditional-access-assign-jamf)
+- [Jamf Doc: Integrating with Microsoft Intune to Enforce Compliance on Mac Computers Managed by Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/microsoft-intune/10.17.0/Introduction.html)
+- [Jamf Doc: Conditional Access with Azure](https://resources.jamf.com/documents/white-papers/conditional-access-going-beyond-perimeter-based-security.pdf)
 - Only applies to AAD User groups
-- [MSFT Doc: Troubleshooting](https://docs.microsoft.com/en-us/mem/intune/protect/troubleshoot-jamf)
 
 
 
@@ -909,7 +917,7 @@ https://jamf.it/dep-debug
 
 - Jamf Protect
     
-    - [YouTube: Introduction to Protect](https://www.youtube.com/watch?v=gsbfkCSjwxc&t=1s)`
+    - [YouTube: Introduction to Protect](https://www.youtube.com/watch?v=gsbfkCSjwxc&t=1s)
     - [Product Page](https://www.jamf.com/products/jamf-protect/)
     - [Admin Guide](https://docs.jamf.com/jamf-protect/administrator-guide/Preface.html)
     - [Evaluation Guide]( https://docs.jamf.com/jamf-protect/evaluation-guide/Overview.html)
@@ -936,7 +944,15 @@ https://jamf.it/dep-debug
 - [Composer User Guide](https://www.jamf.com/resources/product-documentation/composer-user-guide/)
 
 
-<a name=“mdm_wso”></a>
+<a name="mdm_addigy"></a>
+
+### Addigy
+
+- [Docs](support.addigy.com)
+
+
+<a name="mdm_wso"></a>
+
 ### Workspace ONE
 
 - [MacOS Samples](https://github.com/vmware-samples/euc-samples/tree/master/macOS-Samples)
@@ -986,12 +1002,12 @@ https://jamf.it/dep-debug
 - [WorkspaceONE Mobileconfig Importer](https://flings.vmware.com/workspace-one-mobileconfig-importer)
 
 
-<a name=“mdm_msft_device_manager”></a>
+<a name="mdm_msft_device_manager"></a>
 ### MSFT Device Manager
 
 - [REST API](https://docs.microsoft.com/en-us/rest/api/azure/)
 
-<a name=“mdm_mobile_iron”></a>
+<a name="mdm_mobile_iron"></a>
 ### Mobile Iron
 
 
