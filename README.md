@@ -78,6 +78,10 @@ Referenced often, Updated simi-regularly :)
 
     1. Handy Commands
 
+1. [Other](#other)
+
+    1. [JumpCloud](#jumpcloud)
+
 <a name="macintosh"></a>
 
 ## Related to Apple Macintosh Support & Administration
@@ -505,6 +509,38 @@ Please send any comments to 800-179comments@nist.gov.
 - Only applies to AAD User groups
 - [MSFT Doc: Troubleshooting](https://docs.microsoft.com/en-us/mem/intune/protect/troubleshoot-jamf)
 
+
+### IIS
+
+*Errors*
+
+- [HTTP Error 403.7 - Forbidden](https://support.microsoft.com/en-us/help/942067/http-error-403-7-forbidden-error-when-you-run-a-web-application-that-i)
+
+    This problem occurs because the Require SSL option is selected. This option appears on the SSL Settings page of Internet Information Services (IIS) Manager. When this option is selected, all requests that client computers make to the Web application must use a Secure Sockets Layer (SSL) connection. 
+
+    Additionally, the Require option of the "Client certificates" feature is selected. This option also appears on the SSL Settings page of IIS Manager. When this option is selected, all client computers that send requests to the server that is running IIS must have valid client certificates.
+
+- [403.7 Forbidden: Client Certificate Required](https://support.microsoft.com/en-us/help/186812/403-7-forbidden-client-certificate-required-error-when-you-open-an-iis)
+
+    This error occurs when the website requests a client certificate, and then the client either does not provide one or the certificate supplied by the client browser is rejected. Client certificates are a kind of Secure Sockets Layer (SSL) certificate typically used to identify a user or computer to a website. 
+
+    - The following are several possible causes of this problem:
+    - The root certificate (certification authority certificate) of the client certificate is not installed on the computer that is running IIS.
+    - The client certificate has expired, or the effective time has not been reached.
+    - The client certificate was revoked.
+    - No valid client certificate is available, or a potentially valid client certificate does not have an associated private key installed.
+
+- [HTTP Error 403.16 - Forbidden](https://support.microsoft.com/en-us/help/942061/error-message-when-you-visit-a-web-site-that-is-hosted-on-iis-7-0-http)
+
+    **Cause 1**
+
+    This problem occurs because the root certificate of the certification authority is not in the Trusted Root Certification Authorities certificate store on the IIS Web server.
+
+    Note The root certificate of the certification authority is used to issue the client certificate.
+
+    **Cause 2**
+
+    There are one or more non–self-signed certificates in the Trusted Root Certification Authorities certificate store. A non–self-signed certificate is any certificate for which the "Issued To" and "Issued By" values are not an exact match.
 
 ### SCCM Administration
 
@@ -1803,4 +1839,14 @@ atom-text-editor.editor .selection .region {
 
 [[top](#top)]
 
-<a name="windows"></a>
+<a name="other"></a>
+
+## Other
+
+<a name="jumpcloud"></a>
+
+### JumpCloud
+
+- [JumpCloud User Attributes](https://support.jumpcloud.com/support/s/article/user-attributes-2019-08-21-10-36-47)
+- [Travelingtechguy: JumpCloud LDAP and Jamf](https://travellingtechguy.eu/jumpcloud-as-ldap-provider-in-jamfcloud-jamfpro/)
+- [Weldon Dodd: JumpCloud SSO & Jamf](https://medium.com/@weldon/using-jumpcloud-sso-with-jamf-pro-e5fd7006bdf1)
