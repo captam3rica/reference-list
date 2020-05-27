@@ -90,28 +90,30 @@ Referenced often, Updated simi-regularly :)
 
 ### Tools
 
-- [Packages](http://s.sudre.free.fr/Software/Packages/about.html): Awesome package creator
-	- [User Guide](http://s.sudre.free.fr/Software/documentation/Packages/en_2017/index.html)
-- [iMazing Profile Editor](https://imazing.com/profile-editor) - iMazing Profile Editor lets you create, edit, and sign Apple configuration profiles. Define settings with ease, ready to be deployed locally or via MDM to fleets of iPhones, iPads, Macs, and other Apple devices.
-
-    - [Manifests](https://github.com/ProfileCreator/ProfileManifests/tree/master/Manifests)
-
 - [AutoPkg](https://autopkg.github.io/autopkg/) - AutoPkg is a system for automatically preparing software for distribution to managed clients. Recipes allow you to specify a series of simple actions which combined together can perform complex tasks, similar to Automator workflows or Unix pipes.
 
     - [GitHub Repo](https://github.com/autopkg/autopkg) 
     - [recipe-robot](https://github.com/homebysix/recipe-robot): help create AutoPkg 
 recipes.
 
-- [Suspicious Package](http://www.mothersruin.com/software/SuspiciousPackage/get.html): look inside of packages. 
-- [PPPC Utility (Jamf)](https://github.com/jamf/PPPC-Utility) - PPPC Utility is a macOS (10.13 and newer) application for creating configuration profiles containing the Privacy Preferences Policy Control payload for macOS. The profiles can be saved locally signed or unsigned. Profiles can also be uploaded directly to a Jamf Pro server.
-- (NO LONGER DEVELOPED)[Profile Creator](https://github.com/ProfileCreator/ProfileCreator) - macOS application to create configuration profiles.
-- [Payload-Free-Package-Creator](https://github.com/rtrouton/Payload-Free-Package-Creator): when you want to just dumb a script somewhere.
-- [Google Santa](https://github.com/google/santa): Application blacklisting
+- [BigHonkingText](https://bitbucket.org/twocanoes/bighonkingtext/src/master/) - BigHonkingText is a command line tool to put up large letters on the screen from the command line on macOS.
+
 - [DEPNotify](https://gitlab.com/Mactroll/DEPNotify): Simple tool to display
     what is happening during DEP enrollment on the Mac.
 
     - [cannonball](http://cannonball.tombridge.com/2017/04/27/getting-started-with-installapplication-depnotify-and-simplemdm/)
 
+- [Packages](http://s.sudre.free.fr/Software/Packages/about.html): Awesome package creator
+	- [User Guide](http://s.sudre.free.fr/Software/documentation/Packages/en_2017/index.html)
+- [iMazing Profile Editor](https://imazing.com/profile-editor) - iMazing Profile Editor lets you create, edit, and sign Apple configuration profiles. Define settings with ease, ready to be deployed locally or via MDM to fleets of iPhones, iPads, Macs, and other Apple devices.
+
+    - [Manifests](https://github.com/ProfileCreator/ProfileManifests/tree/master/Manifests)
+
+- [Suspicious Package](http://www.mothersruin.com/software/SuspiciousPackage/get.html): look inside of packages. 
+- [PPPC Utility (Jamf)](https://github.com/jamf/PPPC-Utility) - PPPC Utility is a macOS (10.13 and newer) application for creating configuration profiles containing the Privacy Preferences Policy Control payload for macOS. The profiles can be saved locally signed or unsigned. Profiles can also be uploaded directly to a Jamf Pro server.
+- (NO LONGER DEVELOPED)[Profile Creator](https://github.com/ProfileCreator/ProfileCreator) - macOS application to create configuration profiles.
+- [Payload-Free-Package-Creator](https://github.com/rtrouton/Payload-Free-Package-Creator): when you want to just dumb a script somewhere.
+- [Google Santa](https://github.com/google/santa): Application blacklisting
 - [mac-ibm-enrollment-app](https://github.com/IBM/mac-ibm-enrollment-app) - The Mac@IBM enrollment app makes setting up macOS with Jamf Pro more intuitive for users and easier for IT. The application offers IT admins the ability to gather additional information about their users during setup, allows users to customize their enrollment by selecting apps or bundles of apps to install during setup, and provides users with next steps when enrollment is complete.
 
 - [SplashBuddy](https://github.com/Shufflepuck/SplashBuddy) - SplashBuddy goal is to provide an elegant and secure onboarding process for Mac users using DEP.
@@ -304,6 +306,7 @@ recipes.
 
 ### Apple Business Manager
 
+- [Service access with Managed Apple IDs in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/service-access-with-managed-apple-ids-apd435283f6b/web)
 - [What are Managed Apple IDs in Apple Business Manager?](https://support.apple.com/guide/apple-business-manager/what-are-managed-apple-ids-tes78b477c81/1/web/1)
 - [Create Managed Apple IDs in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/create-managed-apple-ids-mdm1c9622977/web)
 - [Configure federated authentication with Microsoft Azure AD for Apple Business Manager](https://support.apple.com/guide/apple-business-manager/configure-federated-authentication-microsoft-apdc9611d0e0/1/web/1#apddc46155ee)
@@ -508,6 +511,7 @@ Please send any comments to 800-179comments@nist.gov.
 - [MSFT Doc: Enforcing Conditional Access](https://docs.microsoft.com/en-us/mem/intune/protect/conditional-access-assign-jamf)
 - Only applies to AAD User groups
 - [MSFT Doc: Troubleshooting](https://docs.microsoft.com/en-us/mem/intune/protect/troubleshoot-jamf)
+- [MSFT Doc: macOS settings to mark devices as compliant or not compliant using Intune](https://docs.microsoft.com/en-us/mem/intune/protect/compliance-policy-create-mac-os)
 
 
 ### IIS
@@ -677,6 +681,7 @@ https://jamf.it/dep-debug
 *API Documentation*
 
 - [API Support](http://developer.jamf.com/apis/jamf-pro-api/index)
+- [Classic API](https://developer.jamf.com/apis/classic-api/index)
 - [New Swagger API - https://[your_url].jamfcloud.com/uapi/doc](https://[your_url].jamfcloud.com/uapi/doc/#)
 - What can be manipulated
 	- Enbale/disable Bluetooth
@@ -746,6 +751,10 @@ https://jamf.it/dep-debug
 - [Video on Setting up Jamf as a SCEP Proxy](https://www.youtube.com/watch?v=jn0HTWKubFY)
 - [SCEP - Microsoft CA Integration](https://www.ibm.com/support/knowledgecenter/en/SS8H2S/com.ibm.mc.doc/ce_source/concepts/ce_ca_ms_ca_int.htm)
 
+
+*Security*
+
+- [Administering FileVault on macOS 10.14 or Later with Jamf Pro](https://www.jamf.com/resources/technical-papers/administering-filevault-on-macos-10-14-or-later-with-jamf-pro/) - This guide provides step-by-step instructions for administering FileVault on macOS 10.14 or later with Jamf Pro.
 
 *Extension Attributes*
 
@@ -966,6 +975,7 @@ https://jamf.it/dep-debug
 
     - [Admin Guide](https://www.jamf.com/resources/product-documentation/jamf-connect-administrators-guide/)
     - [Using FileVault with Jamf Connect Login](https://www.jamf.com/jamf-nation/articles/682/using-filevault-with-jamf-connect)
+    - [Enabling FileVault with Jamf Connect Login on macOS 10.15 or Later](https://www.jamf.com/jamf-nation/articles/708/enabling-filevault-with-jamf-connect-login-on-macos-10-15-or-later)
     - [Understanding Jamf Connect Authentication with Azure AD Hybrid Identity Solutions](https://www.jamf.com/jamf-nation/articles/702/understanding-jamf-connect-authentication-with-azure-ad-hybrid-identity-solutions)
     - [Understanding Jamf Connect with OpenID Connect Authentication](https://www.jamf.com/jamf-nation/articles/696/understanding-jamf-connect-with-openid-connect-authentication)
     - [Configuring Jamf Connect with Azure AD Hybrid Identity Solutions](https://www.jamf.com/jamf-nation/articles/697/configuring-jamf-connect-with-azure-ad-hybrid-identity-solutions)
@@ -1039,8 +1049,10 @@ https://jamf.it/dep-debug
 
 
 <a name="mdm_msft_device_manager"></a>
-### MSFT Device Manager
+### MSFT Endpoint Manager
 
+- [Endpoint Manager Admin Console](https://endpoint.microsoft.com)
+- [Create a User Enrollment Profile: iOS/iPadOS](https://docs.microsoft.com/en-us/mem/intune/enrollment/ios-user-enrollment)
 - [REST API](https://docs.microsoft.com/en-us/rest/api/azure/)
 
 <a name="mdm_mobile_iron"></a>
@@ -1511,8 +1523,9 @@ These wrappers don’t include documentation, please check Apple’s documention
 
 <a name="bash"></a>
 
-### Bash
+### Shell
 
+- [Parse JSON Using JQ](https://stedolan.github.io/jq)
 - [Bash Cheat Sheet](https://devhints.io/bash)
 - [Cyber Dojo](https://www.cyber-dojo.org)
 - [bashoneliners.com](http://www.bashoneliners.com/oneliners/oneliner/popular/)
