@@ -150,6 +150,12 @@ recipes.
 
 ### Handy Commands
 
+- Launch Terminal session from SetupAssistant
+
+    - `CTL + OPTION + CMD + T`
+    - At the language screen you are root (Pre Device management screen)
+    - At SetupAssitant screens you are _mbsetupuser
+
 - Query LDAP
 
 	- Example directory domain
@@ -649,6 +655,13 @@ If IE security settings are blocking you from downloading a file use the followi
 	- evsecurer-oscp.verisign.com
 - [Set a Policy Banner at Login Window](https://support.apple.com/en-us/HT202277)
 
+#### MDM Trigger Files
+
+- Directory: `/var/db/ConfigurationProfiles/Settings`
+- Files
+    - .cloudConfigHasActivationRecord
+    - .cloudConfigRecordFound
+    - .migrated
 
 #### DEP Debug
 
