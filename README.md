@@ -9,18 +9,18 @@ Referenced often, Updated simi-regularly :)
 ## TOC
 
 1. [Apple  ](#macintosh)
-
-	1. [Tools](#macos_tools)
-	2. [Handy Sites](#macos_sites)
-	3. [Handy Terminal Commands](#macos_commands)
-	4. [Documentation](#macos_documentation)
+    1. [Tools](#macos_tools)
+    1. [Handy Sites](#macos_sites)
+    1. [Handy Terminal Commands](#macos_commands)
+    1. [Documentation](#macos_documentation)
 	   1. [MDM Protocol](#appls_mdm_protocol)
-	5. [Networking & Wi-Fi](#macos_network_and_wifi)
-	6. [Security](#macos_security)
-	7. [Encryption & FileVault](#macos_encryption_and_fv)
-	8. [Application Deployment](#apple_app_deployment)
-	8. [Apple Device Automation](#apple_device_automation)
-	9. [Support](#apple_support)
+    1. [Content Cache](#apple_content_caching)
+    1. [Networking & Wi-Fi](#macos_network_and_wifi)
+    1. [Security](#macos_security)
+    1. [Encryption & FileVault](#macos_encryption_and_fv)
+    1. [Application Deployment](#apple_app_deployment)
+    1. [Apple Device Automation](#apple_device_automation)
+    1. [Support](#apple_support)
 
 1. [Unix & GNU/Linux](#unix_linux)
 1. [Windows](#windows)
@@ -55,20 +55,24 @@ Referenced often, Updated simi-regularly :)
     1. VMware Horizon
 
 1. [Certificate Information](#cert_information)
-1. [Scripting & Development](#scripting-and-languages)
 
-    1. [Code Signing](@scripting_code_signing)
-    1. Git
-    1. [Python](#python)
-    1. [Swift](#swift_code)
-    1. [Bash](#bash)
-    1. [Vim](#vim)
-    2. [VSCode](#vscode)
+1. [Scripting, Automation, & Development](#scripting_automation_dev)
+
+    1. [Ansible](#ansible)
     1. [Atom](#atom)
+    1. [Awk](#awk)
+    1. [Bash](#bash)
+    1. [Code Signing](@scripting_code_signing)
+    1. [Git](#git)
     1. [Markdown](#markdown)
-    2. RegEx
-    3. PowerShell
-    4. sed
+    1. [PowerShell](#powershell)
+    1. [Python](#python)
+    1. [RegEx](#regex)
+    1. [sed](#sed)
+    1. [Swift](#swift_code)
+    1. [Vim](#vim)
+    1. [VSCode](#vscode)
+    1. [zshell](#zshell)
 
 1. Software
 
@@ -310,6 +314,157 @@ recipes.
 - [Setting Printer Options Via CLI](http://www.brunerd.com/blog/2012/03/13/getting-and-setting-ppd-options-via-command-line-for-use-with-lpadmin-in-os-x/)
 
 
+<a name="apple_content_caching"></a>
+
+### Content Cache
+
+- [Manage content caching from the command line on Mac](https://support.apple.com/guide/mac-help/manage-content-caching-command-line-mac-mchla6d4541e/mac)
+
+#### Command Usage
+
+```
+AssetCacheTetheratorUt... BSD System Manager's ManualAssetCacheTetheratorUt...
+
+NAME
+     AssetCacheTetheratorUtil -- control networking of tethered devices
+
+SYNOPSIS
+     AssetCacheTetheratorUtil [-j|--json] enable
+     AssetCacheTetheratorUtil [-j|--json] disable
+     AssetCacheTetheratorUtil [-j|--json] isEnabled
+     AssetCacheTetheratorUtil [-j|--json] status
+
+DESCRIPTION
+     iOS and tvOS devices connected to a computer with a USB cable can be "tethered," so that they route their Internet
+     requests through the computer.  AssetCacheTetheratorUtil enables a tethered network, disables it, or reports on
+     its status.  Tethering requires Content Caching.  AssetCacheTetheratorUtil must be run by root, except for the
+     isEnabled and status commands.
+
+OPTIONS
+     -j|--json     Print results in machine-parseable JSON format to stdout.
+
+SEE ALSO
+     System Preferences > Sharing > Content Caching, AssetCacheLocatorUtil(8), AssetCacheManagerUtil(8)
+
+macOS                            June 17, 2020                           macOS
+```
+
+```
+AssetCacheManagerUtil(8)  BSD System Manager's Manual AssetCacheManagerUtil(8)
+
+NAME
+     AssetCacheManagerUtil -- control the macOS Content Cache
+
+SYNOPSIS
+     AssetCacheManagerUtil [-a|--all] [-j|--json] [-l|--linger] command
+
+DESCRIPTION
+     AssetCacheManagerUtil controls the macOS Content Cache.  AssetCacheManagerUtil must be run by root except as noted
+     below.  The options are:
+
+     -a|--all      Show all events, not just the end result of the specified command.
+
+     -j|--json     Print results in machine-parseable JSON format to stdout.
+
+     -l|--linger   Linger after completing command, to show other events.
+
+     The commands are:
+
+     activate      Activates the content cache.  Content caching is deactivated by default.  After you activate content
+                   caching, restart devices on your network to take advantage of content caching immediately.  Devices
+                   on your network will discover this content cache over time.  Devices that are restarted will use
+                   this content cache immediately.
+
+     deactivate    Deactivates the content cache.
+
+     isActivated   Reports the content cache's activation status.  Does not require root.
+
+     canActivate   Reports whether the content cache is eligible for activation.  Does not require root.
+
+     flushCache    Flushes the content cache.
+
+     flushPersonalCache
+                   Flushes all personal (iCloud) content from the content cache.
+
+     flushSharedCache
+                   Flushes all shared (non-iCloud) content from the content cache.
+
+     status        Reports the content cache's status.  Does not require root.
+
+     settings      Reports the content cache's settings.  Does not require root.
+
+     reloadSettings
+                   Forces the content cache to reload its settings.
+
+     moveCacheTo path
+                   Moves the cache to path.  The path must end with /Library/Application Support/Apple/AssetCache/Data.
+                   The contents of path are deleted and replaced with the cache.
+
+     absorbCacheFrom path read-only|and-destroy
+                   Imports the cache from path.  The path must end with either /Library/Application Sup-
+                   port/Apple/AssetCache/Data or /Library/Server/Caching/Data.  If the last argument is read-only the
+                   cache at path is not modified, otherwise it is emptied.  This command only starts the absorption,
+                   which proceeds and finishes in the background.  Use the log(1) command to view progress, for exam-
+                   ple: log show --predicate 'subsystem == "com.apple.AssetCache"' --style compact --last 5m
+
+SEE ALSO
+     System Preferences > Sharing > Content Caching, AssetCache(8), AssetCacheLocatorUtil(8),
+     AssetCacheTetheratorUtil(8)
+
+macOS                            June 17, 2020                           macOS
+```
+
+```
+AssetCacheLocatorUtil(8)  BSD System Manager's Manual AssetCacheLocatorUtil(8)
+
+NAME
+     AssetCacheLocatorUtil -- Utility for reporting information about macOS Content Caches
+
+SYNOPSIS
+     AssetCacheLocatorUtil [-j|--json]
+
+DESCRIPTION
+     AssetCacheLocatorUtil reports information related to macOS Content Caches running on the computer or on the local
+     network.
+
+     Some of the information that AssetCacheLocatorUtil reports depends on the current network configuration, and on
+     the user running it.  It might produce different results for different users, on different client devices, or on
+     different networks.  Applications that use content caches might choose ones other than the ones
+     AssetCacheLocatorUtil reports due to factors beyond its knowledge, such as iCloud affinity.
+
+     AssetCacheLocatorUtil reports the following information separately for system daemons and for the current user:
+
+     Availability hint
+                   The system can temporarily save a hint about whether or not there might be content caches on the
+                   computer or on the local network.  AssetCacheLocatorUtil prints that saved hint if it is available.
+
+     Saved content caches
+                   The system can temporarily save information about content caches it has previously found on the com-
+                   puter or on the local network.  AssetCacheLocatorUtil prints that saved information if it is avail-
+                   able.
+
+     Refreshed content caches
+                   AssetCacheLocatorUtil forces the system to search for content caches on the computer and on the
+                   local network and to refresh the saved information above.  It then prints the results.
+
+     Saved and refreshed public IP address ranges
+                   If your network administrator has configured public IP address ranges in DNS, which the system uses
+                   when looking up content caches, AssetCacheLocatorUtil prints saved and refreshed information about
+                   those ranges.
+
+     Saved and refreshed favored server ranges
+                   If your network administrator has configured favored server ranges in DNS, which the system uses
+                   when looking up content caches, AssetCacheLocatorUtil prints saved and refreshed information about
+                   those ranges.
+
+     AssetCacheLocatorUtil then reports the reachability status of all of the content caches it found.  If the computer
+     cannot communicate with a content cache over the local network then it cannot request files from that content
+     cache.  However, just because the computer can "ping" a content cache does not imply that that content cache will
+     serve requests sent from this computer.
+
+     The --json option prints the results in machine-parseable JSON format to stdout.
+```
+
 ### Apple Business Manager
 
 - [Service access with Managed Apple IDs in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/service-access-with-managed-apple-ids-apd435283f6b/web)
@@ -329,6 +484,7 @@ recipes.
 - [Connet to a Wireless Network from CLI](http://osxdaily.com/2011/04/12/connect-wireless-network-command-line/)
 - [802.1x](https://www.esecurityplanet.com/views/article.php/3899996/How-to-Use-Enterprise-WiFi-Encryption-and-8021X-in-Mac-OS-X.htm)
 - [Port Specifications for Apple Services](https://support.apple.com/en-us/HT202944)
+- [APNS](https://support.apple.com/en-us/HT203609)
 
 
 <a name="macos_security"></a>
@@ -779,6 +935,7 @@ https://jamf.it/dep-debug
 - [Jamf Pro Security Overview](https://www.jamf.com/resources/product-documentation/jamf-pro-security-overview/)
 - [MacOS Security Checklist](https://resources.jamf.com/documents/products/documentation/macos-security-checklist.pdf)
 - [Startinstall Repo](https://github.com/jamf/erase-install-webinar/wiki)
+- [Computer Payload Variables](https://docs.jamf.com/10.21.0/jamf-pro/administrator-guide/Computer_Configuration_Profiles.html)
 
 *Commands*
 
@@ -1067,6 +1224,9 @@ https://jamf.it/dep-debug
 - [Endpoint Manager Admin Console](https://endpoint.microsoft.com)
 - [Create a User Enrollment Profile: iOS/iPadOS](https://docs.microsoft.com/en-us/mem/intune/enrollment/ios-user-enrollment)
 - [REST API](https://docs.microsoft.com/en-us/rest/api/azure/)
+- [Add Apps](https://docs.microsoft.com/en-us/mem/intune/apps/apps-add)
+    - [iOS Store](https://docs.microsoft.com/en-us/mem/intune/apps/store-apps-ios)
+    - [VPP](https://docs.microsoft.com/en-us/mem/intune/apps/vpp-apps-ios)
 
 <a name="mdm_mobile_iron"></a>
 ### Mobile Iron
@@ -1410,15 +1570,22 @@ The command to collect the logs from a remote machine is:
 - [OpenSSL.org](http://www.openssl.org/)
 
 \[[top](#top)]
-<a name="scripting-and-languages"></a>
+<a name="scripting_automation_dev"></a>
 
-## Scripting & Development
+## Scripting, Automation, & Development
 
 - [HTTPS Status Code Explanations](https://httpstatuses.com/)
 - [shields.io](https://shields.io)
 - [Carbon - Beautiful Code Snippets](https://carbon.now.sh/T1BQoqf2hzlMLWEWAEfG)
 - [Unicode Character DB](http://www.unicode.org/reports/tr44/#GC_Values_Table)
 
+
+<a name="ansible"></a>
+
+### Ansible
+
+- [Manage macOS user defaults](https://docs.ansible.com/ansible/latest/modules/osx_defaults_module.html)
+- [Python 3 Support](https://docs.ansible.com/ansible/latest/reference_appendices/python_3_support.html)
 
 <a name="scripting_code_signing"></a>
 
@@ -1820,6 +1987,45 @@ atom-text-editor.editor .selection .region {
 
 -   [Learn Sed](http://www.grymoire.com/Unix/Sed.html)
 
+
+
+
+### ZShell
+
+- Validating command-ling args
+
+    ```sh
+    # Validate Args
+    # Don't forget that zsh array index start at 1 and not zero
+    for (( i = 1; i <= ${#ARG_ARRAY[@]}; i++ )); do
+    
+        # Validate if no agrs given, -h, or --help are passed.
+        if [[ "${#ARG_ARRAY}" == 0 ]] || [[ "${ARG_ARRAY}" == "-h" ]] || \
+            [[ "${ARG_ARRAY}" == "--help" ]]; then
+            # Print this tool's help message
+            help_message
+        fi
+    
+        if [[ "${ARG_ARRAY[$i]}" == "--app-name" ]]; then
+            APP_NAME="${ARG_ARRAY[$i+1]}"
+            # Make sure that an app name was passed.
+            if [[ "$APP_NAME" == "" ]]; then printf "Error: Please enter app name!\n"; usage; exit 1; fi
+        fi
+    
+        if [[ "${ARG_ARRAY[$i]}" == "--app-version" ]]; then
+            APP_VERSION="$(/bin/echo ${ARG_ARRAY[$i+1]} | /usr/bin/sed 's/-/./g')"
+            if [[ "$APP_VERSION" == "" ]]; then printf "Error: Please enter app version!\n"; usage; exit 1; fi
+        fi
+    
+        if [[ "${ARG_ARRAY[$i]}" == "--pkg-name" ]]; then
+            PKG_NAME="${ARG_ARRAY[$i+1]}"
+            if [[ "$PKG_NAME" == "" ]]; then printf "Error: Please enter package name!\n"; usage; exit 1; fi
+        fi
+    
+        if [[ "${ARG_ARRAY[$i]}" == "--version" ]]; then; echo "$VERSION"; fi
+    
+    done
+    ```
 
 ### API Documentation
 
