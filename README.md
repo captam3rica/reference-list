@@ -1629,7 +1629,7 @@ The Mac does not have the necessary developer tools installed.
 	
 	And be prompted in a window to update Xcode Command Line tools.
 	
-	![](Screenshots/git/macos-git-error.png)
+	![](images/git/macos-git-error.png)
 
 3. After the update is completed, open a new terminal window and your development tools should be returned.
 
@@ -1639,9 +1639,23 @@ The Mac does not have the necessary developer tools installed.
 4. After that restart your terminal
 
 
+<a name="dev_golang"></a>
+
+### <img src="images/go-lang/go_gopher.png" alt="golang gopher" width="64"/> Go
+
+#### Resources 
+
+- [Effective Go](https://golang.org/doc/effective_go.html)
+- [Go by Example](https://gobyexample.com) - Go by Example is a hands-on introduction to Go using annotated example programs. Check out the first example or browse the full list below.
+- [godoc.org](godoc.org) - standard library and 3rd party packages
+- [golang.org](golang.org) - language and standard library
+- [golang language specification](https://golang.org/ref/spec)
+- [github - Todd McLeod - example code](https://github.com/GoesToEleven/go-programming)
+
+
 <a name="python"></a>
 
-### ![](Screenshots/Python/python-icon.png) Python
+### ![](images/Python/python-icon.png) Python
 
 -	Install `pip` python package manager MacOS - **P**ip **I**nstalls **P**ackages
 	- `sudo easy_install pip`
@@ -1680,7 +1694,7 @@ These wrappers don’t include documentation, please check Apple’s documention
 
 <a name="swift_code"></a>
 
-### ![](Screenshots/Swift/swift_icon.png) Swift
+### ![](images/Swift/swift_icon.png) Swift
 
 #### Code Docs
 
