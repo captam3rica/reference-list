@@ -2,7 +2,7 @@
 
 This is where I put handy links, commands, 3rd party resources, documentation links, etc that I have found helpful in my technology journey
 
-Referenced often, Updated simi-regularly :)
+Referenced often, Updated semi-regularly :)
 
 <a name="top"></a>
 
@@ -64,6 +64,7 @@ Referenced often, Updated simi-regularly :)
     1. [Bash](#bash)
     1. [Code Signing](@scripting_code_signing)
     1. [Git](#git)
+    1. [golang](#golang)
     1. [Markdown](#markdown)
     1. [PowerShell](#powershell)
     1. [Python](#python)
@@ -88,11 +89,17 @@ Referenced often, Updated simi-regularly :)
 
 <a name="macintosh"></a>
 
-## Related to Apple Macintosh Support & Administration
+## Apple Macintosh Support & Administration
 
 <a name="macos_tools"></a>
 
-### Tools
+### Admin Tools
+
+- [Apple Configurator 2](https://help.apple.com/configurator/mac/2.0/) - Apple Configurator 2 makes it easy to deploy iPad, iPhone, iPod touch, and Apple TV devices in your school or business.
+
+- [AutoDMG](https://github.com/MagerValp/AutoDMG) - The award winning AutoDMG takes a macOS installer (10.10 or newer) and builds a system image suitable for deployment with Imagr, DeployStudio, LANrev, Jamf Pro, and other asr-based imaging tools.
+
+- [Automator](https://configautomation.com)
 
 - [AutoPkg](https://autopkg.github.io/autopkg/) - AutoPkg is a system for automatically preparing software for distribution to managed clients. Recipes allow you to specify a series of simple actions which combined together can perform complex tasks, similar to Automator workflows or Unix pipes.
 
@@ -107,38 +114,77 @@ recipes.
 
     - [cannonball](http://cannonball.tombridge.com/2017/04/27/getting-started-with-installapplication-depnotify-and-simplemdm/)
 
-- [Packages](http://s.sudre.free.fr/Software/Packages/about.html): Awesome package creator
-	- [User Guide](http://s.sudre.free.fr/Software/documentation/Packages/en_2017/index.html)
+- [detectX](https://sqwarq.com/detectx/) - A lightweight, troubleshooting and security app for Macs to help find and remove adware, malware, keyloggers, and other unwanted programs. It doesn’t install any kernel extensions or privileged helper daemons, and it is free to use for everyone (no ads, no subscriptions, and no data collection!).
+
+- [Dock Master](https://github.com/Error-freeIT/Dock-Master) - Dock Master is a tool for generating dock profiles and dock packages.
+
+- [EraseInstall](https://bitbucket.org/prowarehouse-nl/erase-install/src/master/) - EraseInstall.app for macOS is designed to allow users to easily erase the HD on their Mac and install a fresh copy of macOS. The application is a wrapper around the command `startosinstall`.
+
 - [iMazing Profile Editor](https://imazing.com/profile-editor) - iMazing Profile Editor lets you create, edit, and sign Apple configuration profiles. Define settings with ease, ready to be deployed locally or via MDM to fleets of iPhones, iPads, Macs, and other Apple devices.
 
     - [Manifests](https://github.com/ProfileCreator/ProfileManifests/tree/master/Manifests)
 
-- [Suspicious Package](http://www.mothersruin.com/software/SuspiciousPackage/get.html): look inside of packages. 
-- [PPPC Utility (Jamf)](https://github.com/jamf/PPPC-Utility) - PPPC Utility is a macOS (10.13 and newer) application for creating configuration profiles containing the Privacy Preferences Policy Control payload for macOS. The profiles can be saved locally signed or unsigned. Profiles can also be uploaded directly to a Jamf Pro server.
-- (NO LONGER DEVELOPED)[Profile Creator](https://github.com/ProfileCreator/ProfileCreator) - macOS application to create configuration profiles.
-- [Payload-Free-Package-Creator](https://github.com/rtrouton/Payload-Free-Package-Creator): when you want to just dumb a script somewhere.
+- [InstallApplications](https://github.com/erikng/installapplications): dynamically download packages for use with `InstallApplication`
+
 - [Google Santa](https://github.com/google/santa): Application blacklisting
+
+- [ManagedMac](http://dayglojesus.github.io/managedmac/) - puppet plugin for managing Mac.
+
 - [mac-ibm-enrollment-app](https://github.com/IBM/mac-ibm-enrollment-app) - The Mac@IBM enrollment app makes setting up macOS with Jamf Pro more intuitive for users and easier for IT. The application offers IT admins the ability to gather additional information about their users during setup, allows users to customize their enrollment by selecting apps or bundles of apps to install during setup, and provides users with next steps when enrollment is complete.
 
-- [SplashBuddy](https://github.com/Shufflepuck/SplashBuddy) - SplashBuddy goal is to provide an elegant and secure onboarding process for Mac users using DEP.
-- [ManagedMac](http://dayglojesus.github.io/managedmac/) - puppet plugin for managing mac.
-- [Dock Master](https://github.com/Error-freeIT/Dock-Master) - Dock Master is a tool for generating dock profiles and dock packages.
-- [mas-cli](https://github.com/mas-cli/mas): App Store from the CLI    
+- [mas-cli](https://github.com/mas-cli/mas): App Store from the CLI
+
+- [Murus macOS Packet Firewall](https://www.murusfirewall.com/murus/)
+
+	macOS features one of the best network firewalls: PF (Packet Filter). It comes in an "under the hood" fashion, installed and disabled by default.
+Murus' purpose is to unleash its potential. With its easy and intuitive icons-based and drag&drop-based interface, visual layers of abstraction and a friendly view of the PF firewall it's a lean and mean tool to protect your Mac and network.
+Designed with ease of use in mind, yet full of advanced options and monitoring tools, Murus is perfect for everybody; from the average user to the experienced UNIX guru/system administrator and even for educational purposes.
+Configure and start the PF firewall in one click using built-in presets, use Murus graphical ruleset editor design tool or write fully customized rulesets using the advanced rule editor. 
+Murus Pro includes Vallum, an application-layer firewall. This allows you to take full control of your Mac at both application and network level.
+
+	Click [here](https://murusfirewall.com/comparison/) to see a comparison between application and network firewalls.
+
 - [NoMAD](https://nomad.menu/downloads/ "No More Active Directory"): Active
     Directory broker client. OpenSource alt to Apple's Enterprise Connect
     service
-- [AutoDMG](https://github.com/MagerValp/AutoDMG) - The award winning AutoDMG takes a macOS installer (10.10 or newer) and builds a system image suitable for deployment with Imagr, DeployStudio, LANrev, Jamf Pro, and other asr-based imaging tools.
+
 - [precache](https://github.com/krypted/precache) - Pull updates down top the
     Apple macOS Server Caching service.
-- [MCXToProfile](https://github.com/timsutton/mcxToProfile) - mcxToProfile is a simple command-line utility to create "Custom Settings" Configuration Profiles without the need for the Profile Manager Device Management service in OS X Server 10.7 and 10.8.
-- [Automator](https://configautomation.com)
-- [Apple Configurator 2](https://help.apple.com/configurator/mac/2.0/) - Apple Configurator 2 makes it easy to deploy iPad, iPhone, iPod touch, and Apple TV devices in your school or business.
-- [EraseInstall](https://bitbucket.org/prowarehouse-nl/erase-install/src/master/) - EraseInstall.app for macOS is designed to allow users to easily erase the HD on their Mac and install a fresh copy of macOS. The application is a wrapper around the command `startosinstall`.
-- [InstallApplications](https://github.com/erikng/installapplications):
-    dynamically download packages for use with `InstallApplication` 
+
+- [MCXToProfile](https://github.com/timsutton/mcxToProfile) - mcxToProfile is a simple command-line utility to create "Custom Settings" Configuration Profiles without the need for the Profile Manager Device Management service in OS X Server 10.7 and 10.8. 
+    
+- [Packages](http://s.sudre.free.fr/Software/Packages/about.html): Awesome package creator for macOS
+
+	- [User Guide](http://s.sudre.free.fr/Software/documentation/Packages/en_2017/index.html)
+
+- [PPPC Utility (Jamf)](https://github.com/jamf/PPPC-Utility) - PPPC Utility is a macOS (10.13 and newer) application for creating configuration profiles containing the Privacy Preferences Policy Control payload for macOS. The profiles can be saved locally signed or unsigned. Profiles can also be uploaded directly to a Jamf Pro server.
+
+- ***(NO LONGER DEVELOPED)*** [Profile Creator](https://github.com/ProfileCreator/ProfileCreator) - macOS application to create configuration profiles.
+
+- [Payload-Free-Package-Creator](https://github.com/rtrouton/Payload-Free-Package-Creator): when you want to just dumb a script somewhere.
+
 - [Recipe Robot](https://github.com/homebysix/recipe-robot) - Recipe Robot is the easiest way to create new AutoPkg recipes for simple Mac apps.
+
+- [SplashBuddy](https://github.com/Shufflepuck/SplashBuddy) - SplashBuddy goal is to provide an elegant and secure onboarding process for Mac users using DEP.
+
+- [**Suspicious Package**](http://www.mothersruin.com/software/SuspiciousPackage/get.html): look inside of packages.
+
 - [vfuse](https://github.com/chilcote/vfuse) - Takes a never-booted DMG and converts it to a VMware Fusion VM.
-- [xmlAutomator](https://github.com/moofit/xmlAutomator) - Tool set created by MoofIT for manipulating `.plist` and `.mobileconfig` files. I mainly use it to unsign `.mobileconfig` files.    
+
+- [xmlAutomator](https://github.com/moofit/xmlAutomator) - Tool set created by MoofIT for manipulating `.plist` and `.mobileconfig` files. I mainly use it to unsign `.mobileconfig` files.
+
+
+<a name="apple_app_deployment"></a>
+
+### Application Deployment
+
+- Adobe CC
+
+	- [VMware github](https://github.com/vmware-samples/euc-samples/tree/master/macOS-Samples/3rd-Party_Software_Guidance/Adobe%20Products)
+
+- [Firefox Preferences](https://github.com/mozilla/policy-templates/blob/a46ede82219f2cf58364c13fb434e30670dcd257/README.md)
+- [Symantec Endpoint Protection client Mac compatibility](https://knowledge.broadcom.com/external/article/152316/mac-compatibility-with-the-endpoint-prot.html)
+
 
 <a name="macos_sites"></a> 
 
@@ -151,6 +197,16 @@ recipes.
     
 
 <a name="macos_commands"></a>
+
+### Handy File System Paths
+
+- Core macOS icons
+
+    `/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources`
+    
+- Apple icon
+
+    `/System/Library/Components/CoreAudio.component/Contents/Resources`
 
 ### Handy Commands
 
@@ -254,6 +310,7 @@ recipes.
 
 #### Apple KBs
 
+- [HT208802 - ABM Release Notes](https://support.apple.com/en-us/HT208802)
 - [HT201407 - If you can't activate your iPhone](https://support.apple.com/en-us/HT201407)
 - [HT208643 - APNS Support Doc](https://support.apple.com/en-us/HT208643)
 - [HT201260 - macOS Builds](https://support.apple.com/en-us/HT201260)
@@ -275,8 +332,9 @@ recipes.
 
 <a name="appls_mdm_protocol"></a>
 
-#### MDM Protocol Related
+#### Apple MDM Protocol
 
+- [Mobile Device Management Settings](https://support.apple.com/guide/mdm/welcome/web)
 - [Apple MDM Documentation](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/MobileDeviceManagementProtocolRef/3-MDM_Protocol/MDM_Protocol.html#//apple_ref/doc/uid/TP40017387-CH3-SW2)
 - [Configuration Profile Reference](https://developer.apple.com/business/documentation/Configuration-Profile-Reference.pdf)
 - [Apple Profile Manager](http://help.apple.com/profilemanager/mac/5.4/#/apd5BD57F16-A2BF-43B9-AB4B-24948FB52C1E)
@@ -293,6 +351,8 @@ recipes.
         ```
     
     - [Mr Macintosh](https://mrmacintosh.com/how-to-manage-catalinas-new-application-notifications-with-a-profile/)
+- [Supervised MDM restrictions for Apple devices](https://support.apple.com/guide/mdm/supervised-restrictions-mdm54960f92a/web)
+- [Installing Custom KEXT](https://developer.apple.com/documentation/apple_silicon/installing_a_custom_kernel_extension)
 
 
 #### Other
@@ -470,9 +530,38 @@ DESCRIPTION
 - [Service access with Managed Apple IDs in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/service-access-with-managed-apple-ids-apd435283f6b/web)
 - [What are Managed Apple IDs in Apple Business Manager?](https://support.apple.com/guide/apple-business-manager/what-are-managed-apple-ids-tes78b477c81/1/web/1)
 - [Create Managed Apple IDs in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/create-managed-apple-ids-mdm1c9622977/web)
+
+
+#### Federation
+
+- [Intro to federated authentication with Apple Business Manager](https://support.apple.com/guide/apple-business-manager/intro-to-federated-authentication-apdb19317543/1/web/1)
 - [Configure federated authentication with Microsoft Azure AD for Apple Business Manager](https://support.apple.com/guide/apple-business-manager/configure-federated-authentication-microsoft-apdc9611d0e0/1/web/1#apddc46155ee)
 - [Add federated domains in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/add-federated-domains-apdf867462bc/1/web/1)
-- [Intro to federated authentication with Apple Business Manager](https://support.apple.com/guide/apple-business-manager/intro-to-federated-authentication-apdb19317543/1/web/1)
+- [Link to new domains in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/link-to-new-domains-apd48c3280c0/1/web/1)
+- [Turn on and test federated authentication in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/turn-on-and-test-federated-authentication-apdb02f73f18/1/web/1)
+
+
+#### SCIM
+
+- [Review SCIM requirements for Apple Business Manager](https://support.apple.com/guide/apple-business-manager/review-scim-requirements-apdd88331cd6/web)
+- [Resolve SCIM user account conflicts in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/resolve-scim-user-account-conflicts-apd313013d12/1/web/1)
+- [View SCIM activity in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/view-scim-activity-apd1bfd8dfde/1/web/1)
+- [Disconnect the SCIM connection in Apple Business Manager](https://support.apple.com/guide/apple-business-manager/disconnect-the-scim-connection-apd609be3a61/1/web/1)
+
+
+<a name="macos_encryption_and_fv"></a>
+
+### Encryption & FileVault
+
+- [Manage FileVault with `fdesetup`](https://derflounder.wordpress.com/2015/12/20/managing-el-capitans-filevault-2-with-fdesetup/)
+- [Mac FileVault recovery key rotation controls via Disk Encryption Configurations](https://www.jamf.com/jamf-nation/feature-requests/6146/mac-filevault-recovery-key-rotation-controls-via-disk-encryption-configurations)
+- [FileVault Institutional Recovery Keys - DerFlounder](https://derflounder.wordpress.com/2014/08/13/filevault-2-institutional-recovery-keys-creation-deployment-and-use/)
+- [GitHub: fv2RecoveryKeyCheck](https://github.com/CiscoMacIT/fv2RecoveryKeyCheck)
+
+#### Key Rotation
+
+- [Automatically Rotate FileVault Keys After Viewing and/or Usage](https://www.jamf.com/jamf-nation/feature-requests/8978/automatically-rotate-filevault-keys-after-viewing-and-or-usage)
+- [Rotate the FileVault Key](https://developer.apple.com/documentation/devicemanagement/rotate_the_filevault_key)
 
 
 <a name="macos_network_and_wifi"></a>
@@ -526,21 +615,6 @@ Please send any comments to 800-179comments@nist.gov.
 		`security find-generic-password -l Hermes`
 
 
-<a name="macos_encryption_and_fv"></a>
-
-### Encryption & FileVault
-
-- [Manage FileVault with `fdesetup`](https://derflounder.wordpress.com/2015/12/20/managing-el-capitans-filevault-2-with-fdesetup/)
-- [FileVault Institutional Recovery Keys - DerFlounder](https://derflounder.wordpress.com/2014/08/13/filevault-2-institutional-recovery-keys-creation-deployment-and-use/)
-
-<a name="apple_app_deployment"></a>
-
-### Application Deployment
-
-- [Firefox Preferences](https://github.com/mozilla/policy-templates/blob/a46ede82219f2cf58364c13fb434e30670dcd257/README.md)
-- [Symantec Endpoint Protection client Mac compatibility](https://knowledge.broadcom.com/external/article/152316/mac-compatibility-with-the-endpoint-prot.html)
-
-
 <a name="apple_device_automation"></a>
 
 ### Automation
@@ -557,9 +631,7 @@ Please send any comments to 800-179comments@nist.gov.
 
 - Blueprint file location
     
-    ```
-    /Users/<username>/Library/Group Containers/K36BKF7T3D.group.com.apple.configurator/Library/Application Support/com.apple.configurator/Blueprints
-    ```
+    `/Users/<username>/Library/Group Containers/K36BKF7T3D.group.com.apple.configurator/Library/Application Support/com.apple.configurator/Blueprints`
 
 
 <a name="apple_support"></a>
@@ -568,6 +640,14 @@ Please send any comments to 800-179comments@nist.gov.
 
 - [ABM Support Numbers](https://help.apple.com/businessmanager/?lang=en-us#/apd098f3d709)
 - [Check Apple Services](https://www.apple.com/support/systemstatus/)
+
+
+### User Enrollment
+
+- [User Enrollment payload list for Apple devices](https://support.apple.com/guide/mdm/user-enrollment-payload-list-mdmd866a7407/1/web/1)
+- [User Enrollment MDM queries for Apple devices](https://support.apple.com/guide/mdm/user-enrollment-queries-mdm455753d19/web)
+- [User Enrollment MDM restrictions for Apple devices](https://support.apple.com/guide/mdm/user-enrollment-restrictions-mdm222c64f44/1/web/1)
+- 
 
 
 \[[top](#top)]
@@ -605,6 +685,9 @@ Please send any comments to 800-179comments@nist.gov.
 - [Windows 10 Environment Variables](https://www.tenforums.com/tutorials/3234-environment-variables-windows-10-a.html)
 - [Install RSAT - Win10 1809](https://www.prajwaldesai.com/install-rsat-tools-on-windows-10-version-1809/)
 
+### Documenation
+
+- [Microsoft Docs](https://docs.microsoft.com/en-us/)
 
 ### Tools
 
@@ -637,6 +720,11 @@ Please send any comments to 800-179comments@nist.gov.
 - [MacOS Excel Keyboard Shortcuts](https://support.office.com/en-us/article/Keyboard-shortcuts-in-Excel-for-Mac-acf5419e-1f87-444d-962f-4e951a658ccd)
 	- AutoFit Width - `⌥ + H + O + I` - in sequence. Not at the same time
 	- AutoFit Height - `⌥ + H + O + A` - in sequence. Not at the same time
+
+#### Errors
+
+- [Exchange Online: Apple Internet Accounts - Need admin approval](https://diecknet.de/en/2020/05/10/Apple-Internet-Accounts-Office365/)
+	
 
 ### Active Directory/AzureAD/LDAP
 
@@ -855,87 +943,10 @@ https://jamf.it/dep-debug
 - What can be manipulated
 	- Enbale/disable Bluetooth
 
-
-*Education*
-
-- [Jamf 200 Course Materials](https://docs.jamf.com/education-services/resources/20190920/200_Resources.html)
-- [Jamf 300 Course Materials](https://docs.jamf.com/education-services/resources/20190920/300_Resources.html)
-- [Jamf 400 Course Materials](https://docs.jamf.com/education-services/resources/20190920/400_Resources.html)
-
-*Maintenance URLs*
-
-- [Service Status](https://status.jamf.com)
-- [Jamf Pro Known Issues](https://www.jamf.com/jamf-nation/my/products/jamf-pro/known-issues)
-
-
-*Network Information*
-
-- [Ports Used](https://www.jamf.com/jamf-nation/articles/34/network-ports-used-by-jamf-pro)
-- [JamfCloud IP Addresses](https://www.jamf.com/jamf-nation/articles/409/permitting-inbound-outbound-traffic-with-jamf-cloud)
-
-
-*LDAP Integration*
-
-- [JIM Install Guide](http://docs.jamf.com/infrastructure-manager/1.3.2/Installing_a_Jamf_Infrastructure_Manager_Instance.html)
-    - [JIM Multi-site](https://github.com/jamf/Multi-JIM/blob/master/Multi-Instance%20JIM-Install.sh)
-- [AzureAD LDAPS](https://www.jamf.com/jamf-nation/discussions/25876/a-guide-to-jss-azure-ad-integration-ldap-+-sso)    
-    - [MSFT Doc: LDAPS Integration](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-configure-ldaps)
-    - [MSFT Doc: Create and Configure an AD DS Instance](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance)
-    - [HCS: Integrating Jamf with Azure AD LDAPS](https://hcsonline.com/support/white-papers/a-guide-to-identity-management-with-azure-active-directory-jamf-pro)
-- [Okta LDAP Integration](https://travellingtechguy.eu/integrating-okta-ldap-in-jamf-pro/)
-
 *Certificate Services Integration*
 
 - [Jamf ADCS Connector](https://docs.jamf.com/ad-cs-connector/1.0.0/Jamf_AD_CS_Connector_Overview.html)
-
-
-*Single-Sign-On*
-
-- [Single Sign-On](http://docs.jamf.com/10.10.0/jamf-pro/administrator-guide/Single_Sign-On.html)
-	- [Okta](https://www.jamf.com/jamf-nation/articles/435/configuring-single-sign-on-with-okta)
-	- [ADFS](https://www.jamf.com/jamf-nation/articles/436/)
-	- [Shibboleth](https://www.jamf.com/jamf-nation/articles/437/)
-	- [OneLogin](https://www.jamf.com/jamf-nation/articles/438/)
-	- [Ping Identity](https://www.jamf.com/jamf-nation/articles/439/)
-	- [G-Suite](https://www.jamf.com/jamf-nation/articles/440/)
-- [MSFT Azure AD SSO Doc](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/jamfprosamlconnector-tutorial)
-
-
-*Conditional Access*
-
-- [Conditional Access and Why it Matters](https://www.jamf.com/products/jamf-pro/microsoft/)
-- [Intune Integration - Traveling Tech Guy](https://travellingtechguy.eu/jamf-pro-and-ms-azure-intune-for-macos/)
-- [Jamf Doc: Integrating with Microsoft Intune to Enforce Compliance on Mac Computers Managed by Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/microsoft-intune/10.17.0/Introduction.html)
-- [Jamf Doc: Conditional Access with Azure](https://resources.jamf.com/documents/white-papers/conditional-access-going-beyond-perimeter-based-security.pdf)
-- Only applies to AAD User groups
-
-
-
-*SCEP Proxy Configuration*
-
-- Port 443 or 80
-- [Enabling SCEP in Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/scep-proxy/10.0.0/Enabling_Jamf_Pro_as_SCEP_Proxy_for_Configuration_Profiles.html)
-- [Jamf Pro SCEP Communication](https://www.jamf.com/jamf-nation/articles/488/communication-of-jamf-pro-as-scep-proxy)
-- [Obtaining a SCEP Proxy Signing Certificate from a Microsoft CA Using Terminal and Uploading the Certificate to Jamf Pro](https://www.jamf.com/jamf-nation/articles/538/obtaining-a-scep-proxy-signing-certificate-from-a-microsoft-ca-using-terminal-and-uploading-the-certificate-to-jamf-pro) - using an external SCEP cert during device enrollment.
-- [Video on Setting up Jamf as a SCEP Proxy](https://www.youtube.com/watch?v=jn0HTWKubFY)
-- [SCEP - Microsoft CA Integration](https://www.ibm.com/support/knowledgecenter/en/SS8H2S/com.ibm.mc.doc/ce_source/concepts/ce_ca_ms_ca_int.htm)
-
-
-*Security*
-
-- [Administering FileVault on macOS 10.14 or Later with Jamf Pro](https://www.jamf.com/resources/technical-papers/administering-filevault-on-macos-10-14-or-later-with-jamf-pro/) - This guide provides step-by-step instructions for administering FileVault on macOS 10.14 or later with Jamf Pro.
-
-*Extension Attributes*
-
-- [Jamf GitHub Extension Attributes Repo](https://github.com/jamf/Jamf-Nation-Extension-Attributes)
-
-*Misc Documentation*
-
-- [All Product Documentation](https://www.jamf.com/resources/product-documentation/)
-- [Jamf Pro Security Overview](https://www.jamf.com/resources/product-documentation/jamf-pro-security-overview/)
-- [MacOS Security Checklist](https://resources.jamf.com/documents/products/documentation/macos-security-checklist.pdf)
-- [Startinstall Repo](https://github.com/jamf/erase-install-webinar/wiki)
-- [Computer Payload Variables](https://docs.jamf.com/10.21.0/jamf-pro/administrator-guide/Computer_Configuration_Profiles.html)
+- [DCOM Port Information](https://support.microsoft.com/en-us/help/832017/service-overview-and-network-port-requirements-for-windows)
 
 *Commands*
 
@@ -1117,9 +1128,88 @@ https://jamf.it/dep-debug
 	 2301     An error occurred because Microsoft Device Registration can only register computers when they are connected to the network.
     ```
 
+*Conditional Access*
+
+- [Conditional Access and Why it Matters](https://www.jamf.com/products/jamf-pro/microsoft/)
+- [Intune Integration - Traveling Tech Guy](https://travellingtechguy.eu/jamf-pro-and-ms-azure-intune-for-macos/)
+- [Jamf Doc: Integrating with Microsoft Intune to Enforce Compliance on Mac Computers Managed by Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/microsoft-intune/10.17.0/Introduction.html)
+- [Jamf Doc: Conditional Access with Azure](https://resources.jamf.com/documents/white-papers/conditional-access-going-beyond-perimeter-based-security.pdf)
+- Only applies to AAD User groups
+
+*Education*
+
+- [Jamf 200 Course Materials](https://docs.jamf.com/education-services/resources/20190920/200_Resources.html)
+- [Jamf 300 Course Materials](https://docs.jamf.com/education-services/resources/20190920/300_Resources.html)
+- [Jamf 400 Course Materials](https://docs.jamf.com/education-services/resources/20190920/400_Resources.html)
+
 *Errors*
 
 - 
+
+*Extension Attributes*
+
+- [Jamf GitHub Extension Attributes Repo](https://github.com/jamf/Jamf-Nation-Extension-Attributes)
+
+*LDAP Integration*
+
+- [JIM Install Guide](http://docs.jamf.com/infrastructure-manager/1.3.2/Installing_a_Jamf_Infrastructure_Manager_Instance.html)
+    - [JIM Multi-site](https://github.com/jamf/Multi-JIM/blob/master/Multi-Instance%20JIM-Install.sh)
+- [AzureAD LDAPS](https://www.jamf.com/jamf-nation/discussions/25876/a-guide-to-jss-azure-ad-integration-ldap-+-sso)    
+    - [MSFT Doc: LDAPS Integration](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-configure-ldaps)
+    - [MSFT Doc: Create and Configure an AD DS Instance](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/tutorial-create-instance)
+    - [HCS: Integrating Jamf with Azure AD LDAPS](https://hcsonline.com/support/white-papers/a-guide-to-identity-management-with-azure-active-directory-jamf-pro)
+- [Okta LDAP Integration](https://travellingtechguy.eu/integrating-okta-ldap-in-jamf-pro/)
+
+*Maintenance URLs*
+
+- [Service Status](https://status.jamf.com)
+- [Jamf Pro Known Issues](https://www.jamf.com/jamf-nation/my/products/jamf-pro/known-issues)
+
+*Misc Documentation*
+
+- [All Product Documentation](https://www.jamf.com/resources/product-documentation/)
+- [Jamf Pro Security Overview](https://www.jamf.com/resources/product-documentation/jamf-pro-security-overview/)
+- [MacOS Security Checklist](https://resources.jamf.com/documents/products/documentation/macos-security-checklist.pdf)
+- [Startinstall Repo](https://github.com/jamf/erase-install-webinar/wiki)
+- [Computer Payload Variables](https://docs.jamf.com/10.21.0/jamf-pro/administrator-guide/Computer_Configuration_Profiles.html)
+
+*Network Information*
+
+- [Ports Used](https://www.jamf.com/jamf-nation/articles/34/network-ports-used-by-jamf-pro)
+- [JamfCloud IP Addresses](https://www.jamf.com/jamf-nation/articles/409/permitting-inbound-outbound-traffic-with-jamf-cloud)
+
+*Remote Control*
+
+- [Initiate Casper Remote session from the record in web interface](https://www.jamf.com/jamf-nation/feature-requests/3236/initiate-casper-remote-session-from-the-record-in-web-interface)
+- [derflaunder: Using directory membership to manage Apple Remote Desktop permissions](https://derflounder.wordpress.com/2018/08/22/using-directory-membership-to-manage-apple-remote-desktop-permissions/)
+- [Enable remote management (full control)](https://www.jamf.com/jamf-nation/discussions/29233/enable-remote-management-full-control-in-mojave#responseChild184447)
+- [
+How to Enable Screen Sharing & Remote Login](https://www.jamf.com/jamf-nation/discussions/31975/how-to-enable-screen-sharing-remote-login)
+
+*SCEP Proxy Configuration*
+
+- Port 443 or 80
+- [Enabling SCEP in Jamf Pro](https://docs.jamf.com/technical-papers/jamf-pro/scep-proxy/10.0.0/Enabling_Jamf_Pro_as_SCEP_Proxy_for_Configuration_Profiles.html)
+- [Jamf Pro SCEP Communication](https://www.jamf.com/jamf-nation/articles/488/communication-of-jamf-pro-as-scep-proxy)
+- [Obtaining a SCEP Proxy Signing Certificate from a Microsoft CA Using Terminal and Uploading the Certificate to Jamf Pro](https://www.jamf.com/jamf-nation/articles/538/obtaining-a-scep-proxy-signing-certificate-from-a-microsoft-ca-using-terminal-and-uploading-the-certificate-to-jamf-pro) - using an external SCEP cert during device enrollment.
+- [Video on Setting up Jamf as a SCEP Proxy](https://www.youtube.com/watch?v=jn0HTWKubFY)
+- [SCEP - Microsoft CA Integration](https://www.ibm.com/support/knowledgecenter/en/SS8H2S/com.ibm.mc.doc/ce_source/concepts/ce_ca_ms_ca_int.htm)
+
+
+*Security*
+
+- [Administering FileVault on macOS 10.14 or Later with Jamf Pro](https://www.jamf.com/resources/technical-papers/administering-filevault-on-macos-10-14-or-later-with-jamf-pro/) - This guide provides step-by-step instructions for administering FileVault on macOS 10.14 or later with Jamf Pro.
+
+*Single-Sign-On*
+
+- [Single Sign-On](http://docs.jamf.com/10.10.0/jamf-pro/administrator-guide/Single_Sign-On.html)
+	- [Okta](https://www.jamf.com/jamf-nation/articles/435/configuring-single-sign-on-with-okta)
+	- [ADFS](https://www.jamf.com/jamf-nation/articles/436/)
+	- [Shibboleth](https://www.jamf.com/jamf-nation/articles/437/)
+	- [OneLogin](https://www.jamf.com/jamf-nation/articles/438/)
+	- [Ping Identity](https://www.jamf.com/jamf-nation/articles/439/)
+	- [G-Suite](https://www.jamf.com/jamf-nation/articles/440/)
+- [MSFT Azure AD SSO Doc](https://docs.microsoft.com/en-us/azure/active-directory/saas-apps/jamfprosamlconnector-tutorial)
 
 
 #### Packaging
@@ -1160,6 +1250,15 @@ https://jamf.it/dep-debug
 - [Composer User Guide](https://www.jamf.com/resources/product-documentation/composer-user-guide/)
 
 
+#### Troubleshooting
+
+- Verify that the port is open with the following powershell command.
+	
+	`Test-NetConnection <fqdn_server_hostname> -Port 80 -InformationLevel "Detailed"`
+
+	- https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection?view=win10-ps
+
+
 <a name="mdm_addigy"></a>
 
 ### Addigy
@@ -1171,6 +1270,7 @@ https://jamf.it/dep-debug
 
 ### Workspace ONE
 
+- [macOS - Custom Attributes](https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/services/ProdProv_All/GUID-BFEAAE97-D112-4B19-8DAB-E0C681F57DDF.html)
 - [MacOS Samples](https://github.com/vmware-samples/euc-samples/tree/master/macOS-Samples)
 - [AirWatch Learning Path](https://mylearn.vmware.com/mgrReg/plan.cfm?plan=47955&ui=www_edu)
 - [MacOS Profile Guide](https://my.air-watch.com/help/9.1/en/Content/Platform_Guides/macOS/C/Profiles_Overview.htm?TocPath=PROFILES|macOS%C2%A0Device%20Profiles|_____0)
@@ -1227,6 +1327,10 @@ https://jamf.it/dep-debug
 - [Add Apps](https://docs.microsoft.com/en-us/mem/intune/apps/apps-add)
     - [iOS Store](https://docs.microsoft.com/en-us/mem/intune/apps/store-apps-ios)
     - [VPP](https://docs.microsoft.com/en-us/mem/intune/apps/vpp-apps-ios)
+
+ #### Endpoint Protection
+ 
+ - [macOS endpoint protection settings in Intune](https://docs.microsoft.com/en-us/mem/intune/protect/endpoint-protection-macos?toc=/intune/configuration/toc.json&bc=/intune/configuration/breadcrumb/toc.json)
 
 <a name="mdm_mobile_iron"></a>
 ### Mobile Iron
@@ -1639,7 +1743,7 @@ The Mac does not have the necessary developer tools installed.
 4. After that restart your terminal
 
 
-<a name="dev_golang"></a>
+<a name="golang"></a>
 
 ### <img src="images/go-lang/go_gopher.png" alt="golang gopher" width="64"/> Go
 
@@ -1651,6 +1755,11 @@ The Mac does not have the necessary developer tools installed.
 - [golang.org](golang.org) - language and standard library
 - [golang language specification](https://golang.org/ref/spec)
 - [github - Todd McLeod - example code](https://github.com/GoesToEleven/go-programming)
+
+
+#### Packages
+
+- [mackit](https://github.com/groob/mackit)
 
 
 <a name="python"></a>
@@ -1682,10 +1791,15 @@ The Mac does not have the necessary developer tools installed.
 - [CheckIO](https://checkio.org)
 - [Real Python: fstrings](https://realpython.com/python-f-strings/)
 - [Real Python: Python String Formatting Best Practices](https://realpython.com/python-string-formatting/)
+- [How to build a python gui app with wxpython](https://realpython.com/python-gui-with-wxpython/)
+- [Advanced import techniques](https://realpython.com/python-import/)
 
 *Modules*
 
 - [pyobjc-framework-SystemConfiguration 5.2](https://pypi.org/project/pyobjc-framework-SystemConfiguration/)
+- [site](https://docs.python.org/3/library/site.html)
+- sys
+    - sys.path
 
 	Wrappers for framework ‘SystemConfiguration’.
 These wrappers don’t include documentation, please check Apple’s documention for information on how to use this framework and PyObjC’s documentation for general tips and tricks regarding the translation between Python and (Objective-)C frameworks
@@ -1967,7 +2081,8 @@ atom-text-editor.editor .selection .region {
 
 ### RegEx
 
--   [RegEx - Grymoire](http://www.grymoire.com/Unix/Regular.html "Learn about regex")
+- [regex101](https://regex101.com)
+- [RegEx - Grymoire](http://www.grymoire.com/Unix/Regular.html "Learn about regex")
 
 \[[top](#top)]
 
