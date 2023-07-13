@@ -105,7 +105,8 @@ recipes.
 
 - [Dock Master](https://github.com/Error-freeIT/Dock-Master) - Dock Master is a tool for generating dock profiles and dock packages.
 
-- [EraseInstall](https://bitbucket.org/prowarehouse-nl/erase-install/src/master/) - EraseInstall.app for macOS is designed to allow users to easily erase the HD on their Mac and install a fresh copy of macOS. The application is a wrapper around the command `startosinstall`.
+- [EraseInstall](https://bitbucket.org/prowarehouse-nl/erase-install/src/master/) - EraseInstall.app for macOS is designed to allow users to easily erase the HD on their Mac and install a fresh copy of macOS.
+ The application is a wrapper around the command `startosinstall`.
 
 - [iMazing Profile Editor](https://imazing.com/profile-editor) - iMazing Profile Editor lets you create, edit, and sign Apple configuration profiles. Define settings with ease, ready to be deployed locally or via MDM to fleets of iPhones, iPads, Macs, and other Apple devices.
 
